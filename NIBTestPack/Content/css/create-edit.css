@@ -1,0 +1,508 @@
+.top-wrapper {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1300px;
+	position: relative;
+}
+
+.wrap-switch {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 20%;
+}
+
+/*client name as page header*/
+.client-name {
+	font-size: 1.5em;
+}
+
+/*detail page (like edit page) header; has header text (eg. PPT name), and 1 or more buttons*/
+.detail-header {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+
+/*right line up the buttons as a whole */
+.detail-header>span:last-child {
+	white-space: nowrap; 
+	float: right;
+	margin-bottom: 3px;
+	font-size: inherit;
+}
+
+.detail-header>span:first-child {	
+	font-size: 1.5em;	/*header text*/
+	float: left;
+	width: 60%;
+	overflow: hidden;
+  text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.detail-header>span:first-child a {
+	font-size: inherit;
+}
+
+.detail-header>span:last-child>*  {
+	margin-left: 5px;
+}
+
+/*=========== table details START ============*/
+.tbl-details {
+	width: 100%;
+	table-layout: fixed;
+}
+
+
+.tbl-details td {
+	padding: 3px 0 1px 0;
+	height: 28px;
+}
+
+/* special padding (for groups of checkboxes, etc.) */
+.tbl-details td.pad-top-bottom-10 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.tbl-details>tbody>tr>td>.input-img-gr img {
+	vertical-align: middle;
+	max-height: 22px;
+	width: auto;
+	padding-bottom: 3px;
+}
+
+.tbl-details.extra-pad td {
+	padding: 3px 3px 1px 3px;
+} 
+
+.tbl-details>tbody>tr>td.extra-vert-pad {
+	padding: 10px 0;
+} 
+
+.tbl-details.first-col-bg tr td:first-child {
+	background-color: #f6f6f6;
+} 
+
+.tbl-details td span {
+	vertical-align: bottom;
+}
+
+.tbl-details>tbody>tr:last-child,
+.tbl-details>tbody>tr.border-bottom-none {
+	border-bottom: none;
+}
+
+.tbl-details>td>input[type="checkbox"],
+.tbl-details>td>input[type="radio"] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#outline-search {
+	display: none;
+}
+/*should have used class instead*/
+.outline-search {
+	display: none;
+}
+
+/* === show/hide search table START === */
+.show-prefix {
+	position: relative;
+	cursor: pointer;
+}
+.show-prefix > span:nth-child(1) {
+	display: inline-block;
+}	
+.show-prefix > span:nth-child(2) {
+	position: absolute;
+	left: -18px;
+	color: #666;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.show-prefix:not([disabled]):hover > span {
+	color: #66ccff;
+}
+/* === show/hide search table END === */
+
+
+/*text action thing with a (triangle) prefix*/
+.btn-txt {
+	position: relative;
+	color: inherit;
+	cursor: pointer;
+}
+.btn-txt span {
+	position: absolute;
+	right: 100%;
+	color: inherit;
+	transition: transform .4s;
+}
+.btn-txt:hover {
+	color: #66ccff;
+}
+.btn-txt-on span {
+	transform: rotate(90deg);
+}
+
+#tbl-assignee thead th {
+	padding: 3px;
+}                                                        
+
+
+.mbs-menu-add-edit,.menu-add-panel{
+    display: inline-block;
+	border: none;
+	background-image: none;
+	outline: none;
+}
+.menu-add-panel {
+	min-width: 50px;
+	height: 35px;
+}
+
+/* the menu located in the table header - blend it in */
+table.tbl-view thead tr th ul.menu-add-panel,
+table.tbl-view thead tr th ul.menu-add-panel:hover {
+  background-color: transparent;
+  border: none;
+}
+table.tbl-view thead tr th ul.menu-add-panel li ul li {
+	text-align: left;
+}
+
+/* --- format phone number boxes START --- */
+.phone-n-std {
+	width: 100%;
+	max-width: 300px;
+}
+.phone-n-std>span {
+	display: inline-block;
+}
+.phone-n-std>span:first-child,
+.phone-n-std>span:nth-child(2) {
+	width: 19%;
+	margin-right: 1%;
+	float: left;
+}
+.phone-n-std>span:last-child {
+	width: 60%;
+}
+/* --- format phone number boxes END --- */
+
+.staff-img {
+	max-height: 97px;
+	width: auto;
+}
+
+tr.inline-edit-owner>td>span {
+	text-align: center; 
+	display: table;
+	width: 100%;
+}
+
+/*a row with inline editing of ownership*/
+tr.inline-edit-owner label {
+	font-size: 14px;
+}
+tr.inline-edit-owner td input[type="radio"]:nth-of-type(2) {
+	display: inline-block;
+	margin-left: 10%;
+}
+/* align all inputs in the row */
+tr.inline-edit-owner>td {
+	vertical-align: bottom;
+}
+
+
+/* === auxiliary details - not editable data displayed in details screen === */
+.aux-details {
+	border: 2px solid #eee;
+	border-radius: 5px;	
+	background-color: #fafafa;
+	padding: 2px 3px;
+}
+.aux-details>table {
+	width: 100%;
+	table-layout: fixed;
+}
+.aux-details>table>tbody>tr>td {
+	height: 25px;
+	line-height: 1;
+	border-bottom: 1px dashed #ddd; 
+	background-color: inherit;
+	vertical-align: bottom;
+}
+.aux-details>table>tbody>tr:last-child>td {
+	border-bottom: none; 
+}
+.aux-details>table>col:nth-child(0) {width: 50%;}
+.aux-details>table>col:nth-child(1) {width: 50%;}
+
+
+/* button with icon as a background (so that the icon can be toggled by toggleClass */
+.btn-img-bg-left {
+	background-repeat: no-repeat;
+	background-position: 3px 50%;
+}
+.btn-chevron-down {
+	background-image: url("../images/chevron-down-sm-inv.png");
+}
+.btn-chevron-up {
+	background-image: url("../images/chevron-up-sm-inv.png");
+}
+
+/* headers in address accordions */
+.accord-addr h3 {
+	line-height: 1;
+	min-height: 2.5em;
+}
+
+.accord-addr h3 span {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.accord-addr h3 span:nth-child(n+2) {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.accord-addr h3 span:nth-child(2) {
+	left: 4%;
+	width: 25%;	
+}
+.accord-addr h3 span:nth-child(3) {
+	left: 31%;
+	width: 10%;	
+}
+.accord-addr h3 span:nth-child(4) {
+	left: 43%;
+	width: 41%;	
+}
+.accord-addr h3 span:nth-child(5) {
+	right: 1%;
+}
+
+.accord-addr.accord-addr-simple  span:nth-child(2) {
+	left: 4%;
+	width: 25%;	
+}
+.accord-addr.accord-addr-simple  span:nth-child(3) {
+	left: 30%;
+	width: 65%;	
+	overflow: hidden;
+  text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+
+/* --- sharing summary --- */
+.sh-summary span {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.1;
+	padding: 3px 3px 1px 3px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	color: #666;
+	min-height: 1.6em;
+ 	margin-bottom: 2px;
+}
+
+.sh-summary div:not([class="hor-indent"]) span {
+	background-color: #ccc;
+	color: #fff;
+}
+.sh-summary div:not([class="hor-indent"]) span.tag-alert {
+	background-color: tomato;
+	color: #fff;
+}
+
+.sh-summary div.hor-indent span {
+	background-color: #f7f7f7;
+	color: #666;
+}
+
+/*=== left nav; collapsible tabs used in Products, Applications; START ===*/
+.tree-wrapper {
+	position: relative;
+}
+.tree-wrapper > div {
+	float: left;
+}
+.tree-wrapper>div:first-child {
+	padding-top: 0;
+}
+
+.ul-tree {
+	width: 100%;
+	margin: 0;
+	margin-top: 2em;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: #e2e2e2;
+}
+
+.ul-tree>li {
+	display: block;
+	width: 100%;
+	background-color: inherit;
+}
+
+.ul-tree>li>div {
+	display: block;
+	width: 100%;
+	padding: 8px 0 8px 20px;
+}
+
+.ul-tree>li>div.has-menu {
+	cursor: pointer;
+	background-color: inherit;
+
+}
+.ul-tree a {
+	display: block;
+	overflow: hidden;
+	background: inherit;
+	color: #333;
+	outline: none;
+	margin-right: 15px;
+	transition: color .1s;
+}
+
+.ul-tree li ul li a {
+	padding: 9px 0 7px 5px;
+	margin-left: 35px;
+	border-bottom: 1px solid #aaa;
+}
+.ul-tree li ul li:last-child a {
+	margin-bottom: 20px;
+}
+
+.ul-tree a.a-curr {
+	font-weight: bold;
+}
+
+.ul-tree a:hover {
+	color: #66ccff;
+}
+
+.menu-contracted,
+.menu-expanded {
+	position: relative;
+}
+.menu-contracted:before, 
+.menu-expanded:before {
+	position: absolute;
+	font-family: 'Glyphicons Halflings';
+	color: gray;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.menu-contracted:before {
+  content: "\e250";
+}
+.menu-expanded:before {
+	content: "\e252";
+}
+.menu-contracted:hover:before {
+	color: #66ccff;
+}
+.menu-expanded:hover:before {
+	color: #66ccff;
+}
+/*=== left-hand side nav; collapsible tabs END ===*/
+
+/* the header above the tabs on edit screens (Client, Applicant, etc.) */
+.tabs-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 1.4em;
+	width: 20%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: normal;
+	color: #aaa;
+	letter-spacing: -1px;
+	white-space: nowrap;
+}
+
+.mbs-tab {
+    float: left;
+    width: 20%;
+    border: none;
+    margin-top: 3em;
+    background-color: #e2e2e2;
+    padding: 20px 0px;
+}
+
+.mbs-tab li {
+    width: 100%;
+    border: none;
+    margin: 0;
+    background-color: #e2e2e2;
+    color: inherit;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    list-style: none;
+    float: left;
+    position: relative;
+    top: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.mbs-tab li > a {
+    display: block;
+    width: 90%;
+    height: 100%;
+    outline: none;
+    white-space: pre-wrap;
+    padding: 7px 0 7px 0;
+    margin: 0 0 0 5%;
+    border-bottom: 1px solid #aaa;
+    transition: color .1s; 
+    float: left;
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.mbs-tab li:last-child a {
+    border: none;
+}
+
+.active-tab {
+    font-weight: bold;
+    color: #333;
+}
+
+.disabled-formatting {
+	display: block;
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+	color: #666;
+	cursor: default;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1.3;
+    min-height: 1.6em;
+	min-width: 100%;
+	width: 100%;
+    padding: 2px 3px 0 3px;
+}
+
+.feature-fieldset {
+    padding: 10px;
+}

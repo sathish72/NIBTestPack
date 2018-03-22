@@ -1,0 +1,46 @@
+﻿// Variables
+
+$font-stack:    "dinweb", Arial, Helvetica, sans-serif;
+$std-head-back-colour: #ebebeb; //we usually use this colour for heading background in tables
+$black-colour:#000;
+$red-colour:red;
+$blue-colour:#66ceff;
+$green-colour: green;
+$blue-dark-colour:#24365a;
+$white-colour:white;
+$disabled-color:#eee;
+$hover-table-link: #66ccff;  //standart hover colour
+$border-color: #ddd;  //standart border colour
+$std-placeholder-colour: gray;    //standart placeholder colour
+$std-field-padding: 2px 3px 0 3px;     //standart padding inside fields
+$std-btn-padding: 4px 7px 2px 7px; 
+$std-border-radius: 2px;   //standart border radius
+$std-border:1px solid $border-color;  //standart border
+$std-border-error: 1px solid $red-colour;  
+$width-100pc: 100%;
+$std-short-input: 170px;
+$xshort-width: 80px; //for tel area and post codes
+$std-long-input:100%;
+$std-font-input: 14px;
+$std-font-main-title: 1.5em;
+$std-text-area-height: 70px; //standart min text-area height
+$display-flex: flex;
+$display-inline-block: inline-block;
+$text-decoration-line-through: line-through; 
+$cursor-default: default;
+$hidden: hidden;
+$inherit: inherit;
+$auto: auto;
+$none: none;
+$right: right;
+$focus-area-height: 200px;    
+$uppercase: uppercase;
+$question-icon-background-color: orange;
+$icon-background-color-default: grey;
+$std-checkbox-size: 1.1em;
+$xsmall-icon-size: 12px;
+$medium-icon-size: 18px;
+$large-icon-size: 26px;
+$icon-override-background-color: gold;
+$border-white: 1px solid $white-colour;
+$default-scroll-height:700px;

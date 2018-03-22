@@ -1,0 +1,479 @@
+﻿
+@{
+    ViewBag.PageTitle = "NIB TestPack";
+}
+
+@section Css
+{
+    @Styles.Render("~/Content/css/dashboard.css?v" + MvcApplication.VersionNumber)
+}
+
+
+
+
+<div class="widget-row">
+
+    @section HeadModelStyle {
+
+        <link href="~/Content/css/ModelCustom.css" rel="stylesheet" />
+
+    }
+
+    @section HeadScript {
+
+
+        <script>
+
+            loadApplicants();
+            loadExpenseType();
+            loadFrequency();
+            function loadApplicants() {
+
+
+                $.ajax({
+                    cache: false,
+                    url: '/Expense/GetAllApplicants',
+                    dataType: "json",
+                    type: 'post',
+                    success: function (result) {
+                        if (result.length > 0) {
+                            $.each(result, function (i, option) {
+                                $('#ddlApplicant').append($('<option/>').attr("value", option.Id).text(option.FirstName));
+                                $('#ddlApplicant1').append($('<option/>').attr("value", option.Id).text(option.FirstName));
+                            });
+                        }
+                        else {
+                            alert("Failed to load expense data!");
+                        }
+                    }
+                });
+            }
+
+
+            function loadExpenseType() {
+
+
+                $.ajax({
+                    cache: false,
+                    url: '/Expense/GetAllExpenseType',
+                    dataType: "json",
+                    type: 'post',
+                    success: function (result) {
+                        if (result.length > 0) {
+                            $.each(result, function (i, option) {
+                                $('#ddlExpenseType').append($('<option/>').attr("value", option.Value).text(option.Name));
+                                $('#ddlExpenseType1').append($('<option/>').attr("value", option.Value).text(option.Name));
+
+                            });
+                        }
+                        else {
+                            alert("Failed to load expense data!");
+                        }
+                    }
+                });
+            }
+
+
+            function loadFrequency() {
+
+
+                $.ajax({
+                    cache: false,
+                    url: '/Expense/GetAllFrequency',
+                    dataType: "json",
+                    type: 'post',
+                    success: function (result) {
+                        if (result.length > 0) {
+                            $.each(result, function (i, option) {
+                                $('#ddlFrequency').append($('<option/>').attr("value", option.Value).text(option.Name));
+                                $('#ddlFrequency1').append($('<option/>').attr("value", option.Value).text(option.Name));
+
+                            });
+                        }
+                        else {
+                            alert("Failed to load expense data!");
+                        }
+                    }
+                });
+            }
+
+            function OpenAddExpense() {
+
+                // Get the modal
+                var modal = document.getElementById('myModalAddExpense');
+
+                // Get the button that opens the modal
+                modal.style.display = "block";
+
+                $("#lblTitle").html("Add Expense");
+                $("#ddlApplicant").val(-1);
+                $("#ddlExpenseType").val(-1);
+                $("#ddlFrequency").val(-1);
+                $("#numAmount").val(0);
+
+
+                $("#hId").val(0);
+                $("#hApplicantId").val(-1);
+
+            }
+
+
+            function OpenEditExpense() {
+                // Get the modal
+
+            }
+
+        </script>
+        <script type="text/javascript">
+
+
+            function SaveExpense() {
+
+                if ($("#ddlApplicant").val() == -1) {
+                    alert("Select an Applicant...");
+                    $("#ddlApplicant").focus();
+                    return;
+                }
+
+                if ($("#ddlExpenseType").val() == -1) {
+                    alert("Select an expense type...");
+                    $("#ddlExpenseType").focus();
+                    return;
+                }
+
+
+                if (!$.isNumeric($('#numAmount').val())) {
+                    alert("Enter amount...");
+                    $("#numAmount").focus();
+                    return;
+                }
+
+
+                if ($("#ddlFrequency").val() == -1) {
+                    alert("Select a frequency...");
+                    $("#ddlFrequency").focus();
+                    return;
+                }
+
+
+                saveExpense();
+
+
+
+
+            }
+
+
+            function CancelExpense() {
+                var modal = document.getElementById('myModalAddExpense');
+
+                modal.style.display = "none";
+            }
+
+
+            function Edit(Id, ApplicantId, Amount, ExpenseType, Frequency) {
+
+                $("#lblTitle").html("Edit Expense");
+                $("#hId").val(Id);
+                $("#hApplicantId").val(ApplicantId);
+
+                $("#ddlApplicant").val(ApplicantId);
+                $("#ddlExpenseType").val(ExpenseType);
+                $("#ddlFrequency").val(Frequency);
+                $("#numAmount").val(Amount);
+
+                var modal = document.getElementById('myModalAddExpense');
+
+                modal.style.display = "block";
+            }
+
+            function Delete(ExpenseType, Id) {
+                if (confirm("Are you sure to delete selected expense type '" + ExpenseType + "' ?") == true) {
+                    deleteExpense(ExpenseType, Id);
+                }
+                return false;
+            }
+
+
+            function saveExpense() {
+
+                var Id = ($("#hId").val() == "" ? 0 : $("#hId").val());
+
+                var applicantId = $("#ddlApplicant").val();
+
+                var expenseType = $("#ddlExpenseType").val();
+                var frequency = $("#ddlFrequency").val();
+                var numAmount = $("#numAmount").val();
+
+                var dataExpense = { Id: Id, ApplicantId: applicantId, Amount: numAmount, ExpenseType: expenseType, Frequency: frequency };
+
+                var jsonExpense = JSON.stringify(dataExpense);
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Expense/Save/',
+                    data: jsonExpense,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (result) {
+                        if (result.Succeeded) {
+                            alert("Saved sucessfully ")
+                            loadExpense();
+
+                            var modal = document.getElementById('myModalAddExpense');
+
+                            modal.style.display = "none";
+
+                        }
+                        else {
+                            alert("Error in saving expense data!");
+
+                        }
+                    }
+                });
+            }
+
+            function deleteExpense(ExpenseType, Id) {
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Expense/Delete/' + Id,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (result) {
+                        if (result.Succeeded) {
+                            alert("Deleted '" + ExpenseType + "' sucessfully ")
+                            loadExpense();
+                        }
+                        else {
+                            alert("Failed to load expense data!");
+                        }
+                    }
+                });
+            }
+
+
+
+            function loadExpense() {
+
+
+                $.ajax({
+                    cache: false,
+                    url: '/Expense/GetAllExpenses',
+                    dataType: "json",
+                    type: 'post',
+                    success: function (result) {
+                        if (result.Succeeded) {
+                            var trHTML = '<div class="container"><table class="table table-striped table-hover"><thead class="thead-dark"><tr><th scope="col">Expense Type</th><th>Amount</th><th>Frequency</th><th>Edit</th><th>Delete</th></tr></thead>';
+                            trHTML += '<tbody>'
+                            $.each(result.Value, function (i, item) {
+
+                                trHTML += '<tr>';
+                                trHTML += '<td>' + result.Value[i].ExpenseTypeDesc + '</td> <td>' + result.Value[i].Amount + '</td> <td>' + result.Value[i].FrequencyDesc + '</td>';
+                                //trHTML += '<td><a href = "JavaScript:Edit(' + result.Value[i].Id + ',' + result.Value[i].ApplicantId + ',' + result.Value[i].Amount + ',' + result.Value[i].ExpenseType + ',' + result.Value[i].Frequency + ')"><img src = "/Content/Images/151-edit.png" title = "Edit"/>' + '</a></td>';
+                                trHTML += '<td><a href = "#myModalEditExpense" class="btn btn-success" data-toggle="modal"><img src = "/Content/Images/151-edit.png" title = "Edit"/>' + '</a></td>';
+
+                                
+                                trHTML += '<td><a href = "#" Onclick = "return Delete(' + "'" + result.Value[i].ExpenseTypeDesc + "'" + ',' + result.Value[i].Id + ')"><img src = "/Content/Images/17-bin.png" title = "Delete"/>' + '</a></td>';
+                                trHTML += '</tr>';
+                            });
+
+                            trHTML += '</table></div>';
+                            trHTML += '</tbody>'
+
+                            $('#divExpense').html(trHTML);
+                        }
+                        else {
+                            alert("Failed to load expense data!");
+                        }
+                    }
+                });
+            }
+
+
+
+
+            $(document).ready(function () {
+                loadExpense();
+
+            });
+
+
+        </script>
+    }
+
+
+
+    <!-- The Modal -->
+
+
+    <div id="myModalAddExpense" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <input type="hidden" id="hId" />
+                    <input type="hidden" id="hApplicantId" />
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Expense</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ddlApplicant">Applicant *</label>
+                            <select class="form-control" name="ddlApplicant" id="ddlApplicant" required></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ddlExpenseType">Type *</label>
+                            <select class="form-control" name="ddlExpenseType" id="ddlExpenseType" required></select>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label>Amount ($) *</label>
+                            <input type="text" id="numAmount" name="numAmount"  class="form-control" required >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Frequencey *</label>
+                            <select class="form-control" name="ddlFrequency" id="ddlFrequency" required></select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="button" class="btn btn-success" value="Add"  data-dismiss="modal"  onclick="JavaScript:SaveExpense();">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalEditExpense" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <input type="hidden" id="hId" />
+                <input type="hidden" id="hApplicantId" />
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Expense</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="ddlApplicant1">Applicant *</label>
+                        <select class="form-control" name="ddlApplicant1" id="ddlApplicant1"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ddlExpenseType1">Type *</label>
+                        <select class="form-control" name="ddlExpenseType1" id="ddlExpenseType1"></select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Amount ($) *</label>
+                        <input type="text" id="numAmount" name="numAmount" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Frequencey *</label>
+                        <select class="form-control" name="ddlFrequency1" id="ddlFrequency1"></select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="button" class="btn btn-success" value="Save" data-dismiss="modal" onclick="JavaScript:SaveExpense();">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myModalAddExpense1" class="modalForm">
+
+
+
+        <!-- Modal content -->
+        <div class="modal-contentForm">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2><label id="lblTitle" /></h2>
+            </div>
+            <div class="modal-bodyForm">
+                <table style="height:100%;padding:30px;background-color:yellow;">
+                    <tr>
+                        <td>Applicant *</td>
+                        <td>
+                            <select name="ddlApplicant" id="ddlApplicant" />
+                            <span id="errorApplicant" hidden="hidden">Select Applicant</span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Type *</td>
+                        <td>
+                            <input type="hidden" id="hId" />
+                            <input type="hidden" id="hApplicantId" />
+
+                            <select name="ddlExpenseType" id="ddlExpenseType" />
+                            @*<option value="-1">Please select</option>
+                                <option value="1">Lease</option>
+                                <option value="2">Child Support</option>*@
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Amount ($)*</td>
+                        <td>
+                            <input type="text" id="numAmount" name="numAmount" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Frequency *</td>
+                        <td>
+                            <select name="ddlFrequency" id="ddlFrequency" />
+                            @*<option value="-1">Please select</option>
+                                    <option value="1">Weekly</option>
+                                    <option value="2">Monthly</option>
+                                    <option value="2">Fortnightly</option>
+                                </select>*@
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footerForm">
+                <input type="button" value="Save" id="btnSave" onclick="JavaScript:SaveExpense();" />
+                <input type="button" value="Cancel" id="btnCancel" onclick="JavaScript: CancelExpense();" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Manage <b>Expenses</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#myModalAddExpense" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Expense</span></a>
+                    </div>
+                </div>
+            </div>
+           <span id="divExpense" />
+      </div>
+    </div>
+            @*<div>
+                <img src="~/Content/Images/191-plus-sign.png" title="Add new expense" id="myBtn" onclick="JavaScript: OpenAddExpense();" />
+
+            </div>*@
+
+

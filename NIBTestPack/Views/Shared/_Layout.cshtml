@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = null;
+    var urlHelper = new UrlHelper(Request.RequestContext);
+    var menuLayout = BusinessService.MenuLayout.GetMenuLayout(urlHelper);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href='@Url.Content("~/Content/images/favicon-16x16.png")' sizes="16x16">
+
+    @Styles.Render("~/Content/themes/base/jquery-ui.min.css") 
+    @Styles.Render("~/Content/css/normalise.css?v" + MvcApplication.VersionNumber)
+    @Styles.Render("~/Content/css/generic-view-search.css?v" + MvcApplication.VersionNumber)
+    @Styles.Render("~/Content/css/global.css?v" + MvcApplication.VersionNumber)
+    @Styles.Render("~/Content/css/global-new.css?v" + MvcApplication.VersionNumber)
+    @Styles.Render("~/Content/css/ui-thirtd-party.css?v" + MvcApplication.VersionNumber)
+    @Styles.Render("~/Content/css/global-header.css?v" + MvcApplication.VersionNumber)
+    @Styles.Render("~/Content/css/create-edit.css?v" + MvcApplication.VersionNumber)
+    
+    @RenderSection("Css", false)
+    <script src="~/Scripts/jquery-3.1.0.js"></script>
+
+    @Scripts.Render("~/Scripts/jquery-3.1.0.min.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.12.0.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("~/Scripts/canvasjs.min.js")
+    @Scripts.Render("~/Scripts/knockout-3.4.2.js")
+    @Scripts.Render("~/Scripts/knockout.mapping-latest.js")
+
+    @RenderSection("HeadScript", required: false)
+    @RenderSection("HeadModelStyle", required: false)
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+
+    <title>@Html.Raw(ViewBag.PageTitle)</title>
+</head>
+<body>
+<div class="blockout not-to-print"></div>
+<nav class="clearfix not-to-print">
+    <div href="#" class="sl-logo">
+        <a href="@Url.Action("Index", "Home", new {area = ""}, null)">
+            <img src='@Url.Content("~/Content/images/NIB.png")' style="height:70px;" alt="NIB" title="NIB Mbs. Version - @ViewBag.VersionNumber">
+        </a>
+    </div>
+
+    <ul class="main-menu" id='main-menu'>
+        @foreach (var menuItem in menuLayout)
+        {
+            <li>
+
+                <a href="#" id="@Html.Raw("menuItem_" + menuItem.Key.Replace(" ", ""))">@menuItem.Key</a>
+
+                <ul class="drop-down">
+                    @foreach (var subItem in menuItem.Value)
+                    {
+                        foreach (var item in subItem)
+                        {
+                            <li>
+                                <div class='menu-header'>@Html.Raw(item.Key)</div>
+                                <ul>
+                                    @foreach (var mi in item.Value)
+                                    {
+                                        <li><a href='@Html.Raw(mi.Url)' id='@Html.Raw("menuItem_" + mi.Caption.Replace(" ", ""))'>@mi.Caption</a></li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                </ul>
+            </li>
+        }
+        <div class="search-glob" title="Search globally">
+            <input type="text" id="input-search-globally">
+            <img src='@Url.Content("~/Content/images/0135-search.png")'>
+        </div>
+    </ul>
+</nav>
+
+<div class="contents">
+    <div class="actions-wrapper not-to-print">
+    </div>
+    @RenderBody()
+</div>
+<!-- Error Modal-->
+<div id="dialog-message" title="Error">
+    <p class="modal-body"></p>
+</div>
+
+<div id="modul-popup"></div>
+
+<div id="errorPopup" style="display: none">@ViewBag.ErrorMessage</div>
+
+<!-- Locker -->
+<div class="locker" id="locker">
+    <span class="helper"></span>
+    <img src='@Url.Content("~/Content/images/loading-image.gif")' alt="loading"/>
+</div>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        @RenderSection("Script", required: false)
+    });
+
+</script>
+</html>

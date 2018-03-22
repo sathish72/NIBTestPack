@@ -1,0 +1,207 @@
+﻿@media print {
+
+    @font-face {
+        font-family: 'DINPro-Bold';
+        src: url("../../fonts/DINPro-Bold.otf") format("opentype");
+    }
+
+    @font-face {
+        font-family: 'DINPro-Medium';
+        src: url('../../fonts/DINPro-Medium.otf') format('opentype');
+    }
+
+    body {
+        overflow: auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    .print-margin-top {
+        margin-top: -30px;
+    }
+
+    .not-to-print, .ui-accordion-header-icon {
+        display: none;
+    }
+
+    .to-print, .print-logo, .ui-accordion-content {
+        display: block !important;
+    }
+
+    .detail-header {
+        height: 60px;
+        border-bottom: 0;
+    }
+
+    .chart-container {
+        display: block;
+        page-break-before: always;
+        position: relative;
+        overflow: initial !important;
+        height: 250px;
+        width: 30%;
+        page-break-inside: avoid;
+    }
+
+    .canvasjs-chart-canvas {
+        width: 300px;
+        height: 250px;
+    }
+
+    .wrap-agent-details {
+        display: block;
+        background: $std-head-back-colour;
+        width: 100%;
+        bottom: 0;
+
+        > div {
+            height: 200px;
+
+            .agent-photo {
+                width: 130px;
+                height: 200px;
+            }
+        }
+    }
+
+    .tbl-view tbody tr:nth-child(even), .tbl-view tbody tr:nth-child(even) * {
+        background: $std-head-back-colour;
+    }
+
+    .tbl-view tbody tr:nth-child(odd), .tbl-view tbody tr:nth-child(odd) * {
+        background: #FFF;
+    }
+
+    .print-subtitle {
+        font-size: 27px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        margin-top: 45px;
+        font-family: DINPro-Bold;
+    }
+
+    .print-table-title {
+        font-family: DINPro-Bold;
+        font-size: 18px;
+        color: black !important;
+    }
+
+    .agent-title {
+        font-family: DINPro-Bold;
+        font-size: 22px;
+        color: $blue-dark-colour;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .tbl-view thead tr:first-child th, .tbl-view tr td {
+        text-align: left;
+        padding-left: 20px !important;
+    }
+
+    .agent-details {
+        margin-top: 10px;
+    }
+
+    .agent-tool-tip {
+        background-color: $blue-colour;
+        width: 220px;
+        height: 100px;
+        border-radius: 20px;
+        margin-top: -40px;
+    }
+
+        .agent-tool-tip p {
+            padding: 10px;
+            color:$white-colour;
+        }
+
+    .agent-tail {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 0 40px 70px;
+        border-color: transparent transparent transparent $blue-colour;
+    }
+
+
+    .detail-header > span:first-child {
+        font-size: 41px;
+        font-weight: 700;
+        color: $blue-dark-colour;
+        font-family: DINPro-Bold;
+    }
+
+    .tbl-view thead tr th, .tbl-view thead tr th * {
+        background-color: $std-head-back-colour;
+        font-size: 12px;
+    }
+
+    .disclamer {
+        word-wrap: break-word;
+    }
+
+    .tbl-view tr td, .tbl-view tr td *, .tbl-view tr th {
+        font-size: 12px;
+        font-family: DINPro-Medium;
+    }
+
+    .tbl-view tr td {
+        border-left: 1px solid$white-colour;
+    }
+
+    .print-logo {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 20%;
+    }
+
+    .ui-accordion .ui-accordion-content {
+        padding: 1em 0;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        text-align: center;
+    }
+
+    .ui-state-default {
+        background-color:$white-colour;
+        border: 0;
+    }
+
+    .ui-widget-content {
+        border: 0;
+    }
+
+    .contents {
+        overflow-y: visible;
+    }
+
+    .overflow-ellipsis, .tbl-view tr td {
+       $white-colour-space: normal;
+        text-overflow: inherit;
+    }
+}
+
+@media print and (orientation: landscape) {
+    /* landscape styles */
+    .agent-tool-tip {
+        left: 550px;
+    }
+
+    .disclamer {
+        font-size: 9.5px;
+    }
+}
+
+@media print and (orientation: portrait) {
+    /* portrait styles */
+    .agent-tool-tip {
+        left: 500px;
+    }
+
+    .disclamer {
+        font-size: 11.5px;
+    }
+}

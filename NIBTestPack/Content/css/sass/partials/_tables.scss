@@ -1,0 +1,401 @@
+﻿
+@each $table-name, $table-cols-arr,$first-count,$parent-module,$table-type in //Structure 1. Name of the class, which is attached to the table; 2. list of table columns; 3. First column to start; 4. Comments; 5. Id or Class identificator
+(tbl-assessment-prod-selection,( 50px,20px,20px,80px,194px,24px,82px,81px,45px,26px,60px,24px,60px,24px,74px,80px,26px,26px,26px),1,"Application --> Assessment","."), (tbl-ff-applicants,(5%,55%,17%,15.99%,3.5%,3.5%,0.01%),1,"Application --> Applicants","."), //Applicants in Application
+(tbl-ff-assets,(25%,25%,35%,15%),1,"Application --> Assets","."), //Assets in Application
+(tbl-ff-liabilities,(25%,25%,35%,15%),1,"Application --> Liabilities","."), //Liabilities in Application
+(tbl-ff-incomes-edit,(24%,16%,20%,8%,8%,8%,26px,26px),1,"Application --> Facts -->Incomes","."), //Facts --> Incomes in Application
+(tbl-ff-expenses-edit,(27%,25%,20%,10%,10%,26px,26px),1,"Application --> Expenses -->Incomes","."), //Facts -->Expenses in Application
+(tbl-summary-docs,(5%,35%,20%,40%),1,"Application --> Summary","."), //Summary  in Application
+(tbl-summary-tasks,(7%,15%,32%,29%,7%,10%),1,"Application --> Summary","."), //Summary tasks in Application
+(tbl-scen-securities,(47%,16%,16%,16%,3%.3%),1,"Application --> Properties","."), //Properties in Application
+(tbl-purpose-costs,(70%,20%,26px,26px),1,"Application --> Purposes","."), // Costs and contributions -->Purposes in Application
+(tbl-purpose-calculating-costs,(70%,20%,10%),1,"Application --> Purposes","."), //Calculating Costs -->Purposes in Application
+(tbl-purpose-liab,(35%,35%,20%,10%),1,"Application --> Purposes","."), //Liabilities -->Purposes in Application
+(tbl-lmi-allocate,(23%,21%,23%,11%,22%),1,"Application --> Purposes","."), //Allocate LMI -->Purposes in Application
+(verification-table,(93%,7%),1,"Application --> Verification","."), //Verification in Application
+(tbl-struct-split,(16%,15%,15%,15%,15%,15%,3%,3%,3%),1,"Application --> Structuring","."), //Structuring in Application
+(tbl-appl-asset-ownership,(50%,30%,10%,10%),1,"Application --> Properties --> Add New Property","."), //Scenarios --> Add New Property in Application
+(tbl-ff-features-selection,(25px,25px,null,25px,25px,null,25px,25px,null),1,"Application --> Features","."), //Features in Application
+(tbl-business-contacts-attachments,(15%,15%,15%,15%,31%,3%,3%,3%),1,"Business Partners --> Agreements --> Main","."), //Agreements -->Main in Business Partners
+(tbl-product-detail-specials,(30%,20%,40%,10%),1,"Product Variant --> Description --> Special","."), //Special --> Description in Product Variant
+(tbl-split-20-80,(20%,80%),1,"Type 20%-80%","."), //Type 20%-80%
+(tbl-split-40-60,(40%,60%),1,"Type 40%-60%","."), //Type 40%-60%
+(tbl-split-30-70,(30%,70%),1,"Type 30%-70%","."), //Type 30%-70%
+(tbl-split-50-50,(50%,50%),1,"Type 50%-50%","."), //Type 50%-50%
+(tbl-split-mbs-standard,(25%,75%),1,"Type 25%-75%","."), //Type 25%-75%
+(tbl-split-20-20-20-20,(20%,20%,20%,20%),1,"Type 20%-20%-20%-20%","."), //Type 20%-20%-20%-20%
+(tbl-split-60-40,(60%,40%),1,"Type 60%-40%","."), //Type 60%-40%
+(tbl-split-70-30,(70%,30%),1,"Type 70%-30%","."), //Type 70%-30%
+(tbl-split-20-20-20-20-20-icn-icn,(18%,19%,19%,19%,19%,3%,3%),1,"Type 18%,19%,19%,19%,19%,3,3","."), //Type 18%,19%,19%,19%,19%,3,3
+(tbl-split-40-30-30,(40%,30%,30%),1,"Type 40%-30%-30%","."), //Type 40%-30%-30%
+(tbl-split-45-10-45,(45%,10%,45%),1,"Type 45%-10%-45%","."), //Type 45%-10%-45%
+(tbl-split-30-50-20,(30%,50%,20%),1,"Type 30%-30%-20%","."), //Type 40%-30%-30%
+(tbl-split-20-40-40,(20%,40%,40%),1,"Type 20%-40%-40%","."), //Type 20%-40%-40%
+(tbl-split-rules,(10%,60%,10%,10%,10%),1,"Type split rules","."), //Type split rules
+(tbl-accreditation,(15%,13%,40%,15%,7%,10%),1,"Staff management --> Compliance --> Accreditation","."), //Staff management --> Compliance --> Accreditation
+(tbl-contact-phone,(30%,61%,3%,3%,3%),1,"Applicant --> Contact information --> Phone/Fax","#"), //Applicant --> Contact information --> Phone/Fax
+(tbl-contact-email,(30%,61%,3%,3%,3%),1,"Applicant --> Contact information --> Email","#"), //Applicant --> Contact information --> Email
+(tbl-contact-phone-wizard,(10%,30%,10%,7%,10%,30%,10%,7%),1,"Online Fact Find --> Contacts --> Phone/Fax","#"), //Online Fact Find --> Contacts --> Phone/Fax
+(tbl-contact-email-wizard,(10%,30%,10%,7%,10%,30%,10%,7%),1,"Online Fact Find --> Contacts --> Email","#"), //Online Fact Find --> Contacts --> Email
+(tbl-contact-social,(18%,76,3%,3%),1,"Applicant --> Contact information --> Social media","#"), //Applicant --> Contact information --> Social media
+(tbl-id-list,(19%,30%,10%,10%,25%,3%,3%),1,"Applicant --> miscellaneous --> Identefication","#"), //Applicant --> miscellaneous --> Identefication
+(tbl-assignee,(96%,4%),1,"Client --> Sharing --> Assignee","#"), //Client --> Sharing --> Assignee
+(tbl-family-dependants,(20%,20%,8%,12%,5%,26%,3%,3%,3%),1,"Client --> Family --> Dependants","#"), //Client --> Family --> Dependants
+(tbl-edit-staff-family,(17%,17%,8%,12%,5%,25%,12%,3%,3%),1,"Client --> Family --> Dependants","#"), //Client --> Family --> Dependants
+(tbl-compliance,(20%,10%,10%,10%,15%,23%,4%,4%,4%),1,"Smart Line Contacts --> Contacts -->Compliance","#"), //Smart Line Contacts --> Contacts -->Compliance
+(tbl-cpd,(15%,15%,30%,20%,14%,3%,3%),1,"Smart Line Contacts --> Contacts -->CPD","#"), //Smart Line Contacts --> Contacts -->CPD
+(tbl-asset-ownership,(52%,31%,11%,6%),1,"Clients --> Assets -->Ownership: 100%","."), //Clients --> Assets -->Ownership: 100%
+(tbl-liability-ownership,(68%,20%,4%,4%,4%),1,"Liabilities --> Borrowers and Guarantors","."), //Liabilities --> Borrowers and Guarantors
+(tbl-security-assets,(25%,40%,15%,15%),1,"Liabilities --> Assets used as security","."), //Liabilities --> Assets used as security
+(tbl-rel-liabilities,(30%,30%,20%,20%),1,"Assets --> Related liabilities","."), //Assets --> Related liabilities
+(tbl-add-assets,(5%,45%,25%,25%),1,"Applicant --> Liabilities --> Assets used as security --> Select assets","."), //Applicant --> Liabilities --> Assets used as security --> Select assets
+(tbl-task-search-client,(7%,15%,32%,29%,7%,10%),1,"Company Clients --> Tasks","."), //Company Clients --> Tasks
+(tbl-co-client-contacts,(22%,21%,21%,25%,4%,4%,4%),1,"Company Clients --> Company contacts","."), //Company Clients --> Company contacts
+(tbl-empl-incomes,(46%,16%,16%,16%,3%,3%),1,"Applicant --> Employment --> Current employment -->Income","."), //Applicant --> Employment --> Current employment -->Income
+(tbl-incomes,(25%,35%,11%,11%,11%),1,"Applicant --> Employment --> Previous employment","."), //Applicant --> Employment --> Previous employment
+(tbl-expenses,(25%,45%,12%,10%,8%),1,"Applicant --> Expenses","."), //Applicant --> Expenses
+(tbl-client-lead,(29%,29%,19%,15%,4%,4%),1,"Clients --> Miscellaneous --> Leads","."), //Clients --> Miscellaneous --> Leads
+(tbl-3pc,(20%,20%,18%,12%,12%,12%,3%,3%),1,"Clients --> Miscellaneous --> Third party contacts","."), //Clients --> Miscellaneous --> Third party contacts
+(tbl-lump-sums,(10%,35%,35%,10%),1,"Calculator --> Simple loan calculator --> Lump sums","."), //Calculator --> Simple loan calculator --> Lump sums
+(tbl-calc-02-data-entry,(20%,40%,40%),1,"Calculator --> Repayment table calculator","."), //Calculator --> Repayment table calculator
+(tbl-tax-calc-20-30-20-30,(20%,30%,20%,30%),1,"Calculator --> Tax calculator --> Details","."), //Calculator --> Tax calculator --> Details
+(tbl-living-exp,(50%,25%,25%),1,"Calculator --> Living expenses calculator","."), //Calculator --> Living expenses calculator
+(tbl-provider-ppt,(35%,35%,20%,10%,5%),1,"PPT Search --> Provider --> Tags","."), //PPT Search --> Provider --> Tags
+(tbl-products-attachments,(15%,20%,45%,12%,8%),1,"PPT Search --> PPT Management --> Attachments","."), //PPT Search --> PPT Management --> Attachments
+(tbl-view-logo,(33%,33%,33%),1,"PPT Search --> PPT Management --> Attachments --> Logo","."), //PPT Search --> PPT Management --> Attachments --> Logo
+(tbl-ppt-audit-full,(20%,30%,50%),1,"PPT Search --> Audit --> Full Audit","#"), //PPT Search --> Audit --> Full Audit
+(tbl-qu-log,(15%,20%,5%,20%,20%,20%),1,"Quick update --> Quick update log","."), //Quick update --> Quick update log
+(tbl-qu-schedule,(30%,14%,30%,20%,6%),1,"Quick update","."), //Quick update
+(tbl-products-fees-feat-fee,(20%,5%,10%,10%,15%,30%,10%),1,"Product Search --> Product Variant --> Fees --> Feature Fees","."), //Product Search --> Product Variant --> Fees --> Feature Fees
+(tbl-details-prod-fees,(20%,20%,20%,40%),1,"Product Search --> Product Variant --> Fees","."), //Product Search --> Product Variant --> Fees
+(tbl-details-prod-config,(30%,20%,50%),1,"Product Search --> Product Variant --> Config","."), //Product Search --> Product Variant --> Config
+(tbl-product-ongoing-fees,(15%,20%,20%,20%,25%),1,"Product Search --> Product Variant --> Fees --> Ongoing Fees","."), //Product Search --> Product Variant --> Fees --> Ongoing Fees
+(tbl-wf-edit-tasks,(38%,20%,10%,10%,10%,8%,4%),1,"Resources --> Workflow --> Task workflow edit","."), //Resources --> Workflow --> Task workflow edit
+(tbl-doc-template-list,(90%,10%),1,"Group office --> Document management","."), //Group office --> Document management
+(tbl-expression-builder,(10%,25%,70%),1,"Rule Management --> Rule clauses","."), //Rule Management --> Rule clauses
+(tbl-org-details,(30%,70%),1,"Organisation Management --> Edit organisation","."), //Organisation Management --> Edit organisation
+(tbl-templ-edit,(35%,65%),1,"Template Management --> Edit security context template","."), //Edit security context template
+(tbl-user-details,(25%,45%,30%),1,"User Management --> Edit User --> User details","."), //User Management --> Edit User --> User details
+(ppt-tbl-view,(30px,40%,50%),1,"QuickUpdates-->QuickUpdateDetail-->ppt-tbl-view","#"), //QuickUpdates-->QuickUpdateDetail-->ppt-tbl-view
+(tbl-product-detail-rates,(20%,10%,10%,15%,20%,15%,5%,5%),1,"Product Search-->Product Variant-->Rates","."), //Product Search-->Product Variant-->Rates
+(tbl-seven-columns,(10%,15%,15%,15%,15%,15%,15%),1,"Fact Find-->Compliance-->SOMA","."), //Fact Find-->Compliance-->SOMA
+(tbl-contact-development,(20%,15%,29%,15%,15%,3%,3%),1,"Contact-->Compliance-->Development","."),
+(tbl-contact-accreditation,(20%,21%,26%,21%,4%,4%,4%),1,"Contact-->Compliance-->Accreditation","."),
+(tbl-option-summary,(20px,20px,20%,20%,24px,82px,81px,5%,0,5%,0,60px,24px,10%,10%),1,"Application -->tbl-option-summary","."),
+(tbl-broker,(47%,47%,6%),1,"Application -->Application","."), (tbl-thrdParty-copy,(20%,75%,5%),1,"Contacts-->3rdParty contacts-->copy","."), //Contacts-->3rdParty contacts-->copy
+(tbl-existing-partner,(6%,23%,23%,24%,24%),1,"Application -->Add existing business partner","."), (tbl-product-search,(50px,20px,20px,10%,25%,8%,6%,26px,8%,26px,8%,26px,6%,8%,26px,26px),1,"Calculators-->Product Search","."), //Calculators-->Product Search
+(tbl-application-comparison,(30%,10%,12%,12%,12%,12%,12%),1,"Application-->Comparison",".") //Application-->Comparison
+{
+
+    @include table-comment($table-name,$parent-module);
+
+    #{$table-type}#{$table-name} {
+        @include table-cols($table-cols-arr,$first-count);
+    }
+}
+
+    @function set-background-color($back-ground-color) {
+        @if (lightness($back-ground-color) > 10) {
+            @return #f2f2f2;
+        }
+        @else {
+            @return #FFF;
+        }
+    }
+
+    .table-layout-fixed {
+        table-layout: fixed;
+    }
+
+    table {
+        @include table;
+    }
+
+    /*table-details*/
+    .tbl-details {
+        @extend .width-100pc;
+        @extend .table-layout-fixed;
+
+        td {
+            height: 28px;
+        }
+    }
+
+    .overflow-column-text{
+         white-space: nowrap; /*limit all cells, including the links in tds, to not wrap*/
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /*search grids*/
+    .tbl-view { @extend .table-layout-fixed;
+       
+
+        tr {
+            height: 25px;
+
+            td, th {
+                @include td-th;
+            }
+
+            th {
+                border-right: 1px solid $white-colour;
+                @extend .text-align-center;
+            }
+
+            td {
+                @extend .overflow-column-text;
+                padding: .1em .1em .1em .4em;
+
+                .white-space-normal {
+                    white-space: normal;
+                    word-break: break-all;
+                }
+
+                img {
+                    max-height: 22px;
+                    margin: 3px auto;
+                }
+
+                a {
+                    @extend .table-link;
+
+                    :hover {
+                        color: $hover-table-link;
+                    }
+
+                    img {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+        thead {
+            /*table.tbl-view > thead > tr:first-child > th.ordered.desc > div:after */
+            tr:first-child {
+                th {
+                    padding: .4em .1em .4em .1em;
+                    background: $std-head-back-colour;
+                    text-transform:capitalize;
+                }
+
+                > th {
+                    > div {
+                        :not(.overflow-ellipsis) {
+                            position: absolute;
+                            top: 50%;
+                            transform: translate(0, -50%);
+                            right: 5px;
+                        }
+                    }
+                }
+
+                > .ordered > div:after {
+                    @include arrow-direction;
+                    content: "\e253"; /*triangle up*/
+                }
+
+                > .ordered.desc > div:after {
+                    @include arrow-direction;
+                    content: "\e252"; /*triangle up*/
+                }
+            }
+
+            tr {
+                th {
+                    > input {
+                        @include input-txt-std;
+                    }
+
+                    > input:not([class="txt-search-extend"]) {
+                        width: 100%;
+                        @include input-txt-std;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                background-color: #fff;
+            }
+
+            tr:not(.sub-heading):not(.tr-total):not(.checkbox):hover {
+                background-color: #f2f2f2;
+
+                .tbl-business-contacts-attachments td {
+                    background-color: set-background-color(#f2f2f2);
+                }
+            }
+        }
+    }
+
+    .tbl-view.expanded {
+        table-layout: $auto;
+    }
+
+    .table-number-padding-right{
+        padding-right: 3.8px  !important;
+        @extend .text-align-right;
+    }
+
+    /*bootstrap table*/
+     .col-hdr{
+        background: #ebebeb ;
+        text-transform: capitalize;
+        border-right: 1px solid white;
+        text-align: center;
+        line-height: 30px;
+     }
+
+
+     .mbs-container-wrap{ //container for left side of the page. The minimum in media is 1120px but we need 1300px.
+         @extend .container;
+         @extend .min-width-1300px;
+         margin:0 auto;
+      }
+      .mbs-container{
+         @extend .container;
+         @extend .width-100pc;
+         @extend .padding-left-0;
+         @extend .padding-right-0;
+     }
+
+     .mbs-row{
+         @extend .mbs-container;
+         @extend .spacer-top-10;
+         @extend .width-100pc;
+         height: 25px;
+     }
+
+       @each $col-size,$col-width in
+         (xs,1),
+         (sm,1),
+         (md,1),
+         (lg,1),
+         (xs,2),
+         (sm,2),
+         (md,2),
+         (lg,2),
+         (xs,3),
+         (sm,3),
+         (md,3),
+         (lg,3),
+         (xs,4),
+         (sm,4),
+         (md,4),
+         (lg,4),
+         (xs,5),
+         (sm,5),
+         (md,5),
+         (lg,5),
+         (xs,6),
+         (sm,6),
+         (md,6),
+         (lg,6),
+         (xs,7),
+         (sm,7),
+         (md,7),
+         (lg,7),
+         (xs,8),
+         (sm,8),
+         (md,8),
+         (lg,8),
+         (xs,9),
+         (sm,9),
+         (md,9),
+         (lg,9),
+         (xs,10),
+         (sm,10),
+         (md,10),
+         (lg,10),
+         (xs,11),
+         (sm,11),
+         (md,11),
+         (lg,11),
+         (xs,12),
+         (sm,12),
+         (md,12),
+         (lg,12)
+     {
+        .mbs-col-#{$col-size}-#{$col-width} {
+           @extend .col-#{$col-size}-#{$col-width};
+           @extend .padding-left-0;
+           @extend .padding-right-0;
+        }
+    }
+
+       @each $col-size,$col-width in
+         (xs,1),
+         (sm,1),
+         (md,1),
+         (lg,1),
+         (xs,2),
+         (sm,2),
+         (md,2),
+         (lg,2),
+         (xs,3),
+         (sm,3),
+         (md,3),
+         (lg,3),
+         (xs,4),
+         (sm,4),
+         (md,4),
+         (lg,4),
+         (xs,5),
+         (sm,5),
+         (md,5),
+         (lg,5),
+         (xs,6),
+         (sm,6),
+         (md,6),
+         (lg,6),
+         (xs,7),
+         (sm,7),
+         (md,7),
+         (lg,7),
+         (xs,8),
+         (sm,8),
+         (md,8),
+         (lg,8),
+         (xs,9),
+         (sm,9),
+         (md,9),
+         (lg,9),
+         (xs,10),
+         (sm,10),
+         (md,10),
+         (lg,10),
+         (xs,11),
+         (sm,11),
+         (md,11),
+         (lg,11),
+         (xs,12),
+         (sm,12),
+         (md,12),
+         (lg,12)
+     {
+        .mbs-default-col-#{$col-size}-#{$col-width} {
+           @extend .col-#{$col-size}-#{$col-width};
+           @extend .padding-left-0;
+           @extend .padding-right-0;
+        }
+    }
+
+    .mbs-header-col-height{//height for each column in header like loan tracking
+        height:50px;
+    }
+     .border-total{  //left .border-total for the old cshtml before bootstrap
+        border-top: $std-border;
+        @extend .font-weight-bold;
+    }
+
+    .mbs-total-row{ 
+        border-top: $std-border;
+        @extend .mbs-row;
+        @extend .padding-top-5;
+        @extend .font-weight-bold;
+    }
+    .table.borderless > tbody > tr > td {
+    border: none;
+}

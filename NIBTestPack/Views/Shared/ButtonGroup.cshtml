@@ -1,0 +1,16 @@
+﻿<template id="button-group">
+    <button class="btn-mbs-sml colorset-mbs-blue float-right spacer-left-5 uid-button-group-template-reset-button" id="btn-reset" data-bind="click: reset, attr:{form:formId}">Reset</button>
+    <button class="btn-mbs-sml colorset-mbs-blue float-right spacer-left-5 uid-button-group-template-update-button" type="submit" id="btn-update" data-bind="visible: hasChanged, attr:{form:formId}">Update</button>
+</template>
+
+
+<script>
+    ko.components.register('button-group', {
+        viewModel: {
+            createViewModel: function (params) {
+                return params.handler.initialize(params);
+            }
+        },
+        template: { element: 'button-group' }
+    });
+</script>

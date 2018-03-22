@@ -1,0 +1,82 @@
+﻿@using BusinessService
+@using System.Collections.Generic;
+@model BusinessService.DTOs.ExpenseDTO
+@{
+    Layout = null;
+} 
+
+<div data-form-change-listener="true" id="loantrackingloansummary-edit" class="ui-corner-bottom" role="tabpanel" aria-hidden="false">
+    <div class="detail-header clearfix">
+        <span>Summary</span>
+        <button-group params="form:'#fbsubmit',handler:$root"></button-group>
+    </div>
+    @using (Ajax.BeginForm("Save", "ExpenseDTO", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.ReplaceWith,
+        UpdateTargetId = "loantrackingloansummary-edit",
+        OnFailure = "ajaxErrorHandler",
+    }, new {id = "fbsubmit", @class = ""}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.ApplicantId)
+        @Html.HiddenFor(m => m.Amount)
+        @Html.HiddenFor(m => m.ExpenseType)
+        @Html.HiddenFor(m => m.Frequency)
+
+                    <!--Left side-->
+                    <table class="table borderless">
+                        <tbody>
+                        <tr>
+                            <td class="input-group-horiz">Applicant Id</td>
+                            <td>
+                                @Html.DropDownList("ApplicantId", new SelectList((System.Collections.IEnumerable)ViewData["tempApplicantList"], "id", "FirstName"))
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">
+                                @Html.LabelFor(m => m.Amount)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(m=>m.Amount)
+                                @Html.ValidationMessageFor(m => m.Amount)
+                            </td>
+
+                        </tr>
+                            <tr>
+                                <td class="input-group-horiz">Select Expense Type</td>
+                                <td>
+                                    @Html.DropDownList("ExpenseType", new SelectList((System.Collections.IEnumerable)ViewData["tempExpenseTypeList"], "Value", "Name"))
+                                    @Html.ValidationMessageFor(m => m.ExpenseType)
+                                </td>
+
+                            </tr>
+                        <tr>
+                            <td class="input-group-horiz">Select Frequency</td>
+                            <td>
+                                @Html.DropDownList("Frequency", new SelectList((System.Collections.IEnumerable)ViewData["tempFrequencyList"], "Value", "Name"))
+                                @Html.ValidationMessageFor(m => m.Frequency)
+                           </td>
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="Save Expense details" />
+                                    <input type="reset" value="Clear" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+    }
+
+
+</div>
+<script>
+    ko.applyBindings(new FormChangeListener(), $('button-group')[0]);
+</script>
+
+

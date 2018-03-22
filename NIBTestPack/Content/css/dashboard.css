@@ -1,0 +1,439 @@
+/*============================================================
+dashboard screen
+===============================================================*/
+.wbox-dashboard {
+		display: inline-block;
+		width: 40%;
+}
+
+.widget-row {
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+}
+
+
+/* horiz. align wboxes*/
+.widget-row .wbox:first-child {margin-left:9%;}
+.widget-row .wbox:last-child {float:right;	margin-right:9%;}
+
+.wbox-header > span {
+	display: inline-block;
+}
+
+/*glyphs to order tasks*/
+.wbox-header > span:first-child {
+	width: 30px;
+	padding-left: 9px;
+	line-height: 0;
+  cursor: pointer;
+}
+
+/*box title*/
+.wbox-header > span:nth-child(2) {
+	padding: 5px;
+	vertical-align: top;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+/*button in the header*/
+.wbox-header > span:nth-child(3).make-button {
+	height: 20px;
+	float: right;
+	margin-right: 20px;
+  margin-top: 5px;
+  color: #333;
+	background-color: #ddd;
+	border-radius: 3px;
+  text-align: center;
+  min-width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  cursor: pointer;
+
+}
+
+.wbox-header > span > div {
+	display: block;
+	padding: 0;
+	width: 100%;
+}
+
+.wbox-header > span > div .glyphicon {
+	font-size: 12px;
+}
+
+.wbox-body {
+	width: 100%;
+	height: 100%;
+	border-bottom: 1px solid #ccc;
+}
+
+.widget-box-tasks, 
+.widget-box-news,
+.widget-box-recent-activity {
+	height:400px;
+	vertical-align: top;
+}
+
+.widget-box-common,
+.widget-box-client-review {
+	height: 300px;
+	vertical-align: top;
+}
+	
+.widget-box-news{
+	overflow-y: auto;
+}
+
+.widget-box-tasks .wbox-body {
+	background-color: #fff;
+	padding-left: 35px;
+	padding-right: 5px;
+	overflow-y: auto;
+	height: 80%;
+}
+
+.widget-box-recent-activity{
+
+}
+.widget-box-tasks
+ {
+	
+}
+
+.widget-box-recent-activity .wbox-body {
+	overflow-y: auto;
+	height: 80%;
+}
+
+.widget-box-recent-activity > div:nth-child(3) {
+	padding: 5px;
+}
+
+.widget-box-recent-activity > div:nth-child(3) input {
+	margin-top: 5px;
+}
+
+/*the news widget box*/
+.widget-box-news .wbox-body {
+	height: 60%;
+}
+
+.wbox a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wbox a:hover {
+	font-weight: bold;
+}
+
+.widget-box-common .wbox-body,
+.widget-box-client-review .wbox-body {
+border-bottom: none;	
+}
+
+.widget-box-common .wbox-body div:first-child {
+	height: 70%;
+	/*padding: 10px;*/
+/*	margin: 10px auto;
+*/}
+
+.widget-box-common .wbox-body div:last-child {
+	height: 30px;
+	overflow-y: auto;
+	/*white-space: nowrap;*/
+}
+
+
+.widget-box-common .wbox-body > div {
+	width: 70%;
+	margin: 10px auto;
+}
+
+.widget-box-news .wbox-body div:first-child {
+	width: 70%;
+	height: 85%;
+	/*border: 1px solid lightgray;*/
+	margin: 10px auto;
+}
+
+.widget-box-client-review .wbox-body > div:first-child {
+	margin-left: 5%;
+}
+.widget-box-client-review .wbox-body > div:last-child {
+	margin-right: 5%;
+	float: right;
+}
+
+.widget-box-client-review .wbox-body > div {
+	display: inline-block;
+	position: relative;
+	width: 43%;
+	height: 100%;
+	vertical-align: bottom;
+	padding: 10px;
+}
+
+.widget-box-client-review .wbox-body > div > div:nth-child(1) {
+	margin-top: 5%;
+	height: 15%;
+	overflow: auto;
+	text-align: center;
+}
+
+.widget-box-client-review .wbox-body > div > div:nth-child(2) {
+	position: relative;
+	top:0%;
+	height: 70%;
+	width: 100%;
+	text-align: center;
+}
+
+.widget-box-client-review .wbox-body > div:nth-child(2) > div:nth-child(2) a {
+	/*margin: 0 auto;*/
+	font-size: 90px;
+	color: #FDA700;
+}
+
+.wbox .wbox-body div:first-child img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	padding: 2px;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid lightgray;
+}
+
+.info-line {
+	display: block;
+	width: 90%;
+	height: 25px;
+	margin: 5px auto;
+	border-bottom: 1px solid lightgray;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/*remove underlining where unnecessary*/
+.widget-box-news > p:last-child,
+.widget-box-news .wbox-body > a > div:nth-child(2) {
+	border-bottom: none;
+}
+
+.underline {
+	border-bottom: 1px solid lightgray;
+}
+
+/*wbox footer*/
+.wbox-footer {
+	display: inline-block;
+	position: relative;
+	margin: 20px 20px 3px 20%;
+}
+
+.wbox-footer > input {
+	margin-top: 3px;
+}
+
+.wbox-body > ul {
+	width: 100%;
+}
+
+.wbox-body > ul > li:first-child > ul > li > span:nth-child(2) {
+	border-right: 3px solid red;
+
+}
+
+.task-group-header {
+	position: relative;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*highlight total number of incomplete tasks*/
+.task-group-header span {
+	margin-left: 10px;
+	color: red;
+}
+
+.task-group {
+	width: 100%;
+}
+
+.list-contracted:before, 
+.list-expanded:before {
+	position: absolute;
+	top: -2px;
+	left: -30px;
+	font-family: 'Glyphicons Halflings';
+	color: lightgray;
+}
+
+.list-contracted:before {
+  content: "\e250";
+
+}
+.list-expanded:before {
+	content: "\e252";
+}
+
+/*a task line(s) */
+.task-group > ul > li {
+	position: relative;
+	padding: 5px 0 5px 0;
+	border-bottom: 1px solid #dadada;
+	list-style-type: none;
+	/*width: 100%;*/
+
+}
+
+.task-group > ul > li > span {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+
+.task-col-1 {
+	width: 15%;
+} 
+.task-col-3, .task-col-4 {
+	width: 5%;
+	float: right;
+	text-align: center;
+  text-transform: uppercase;
+}
+
+.task-col-3:before {
+	font-family: 'Glyphicons Halflings';
+	color: gray;
+	content: "\e118"; /*folder open*/
+}
+
+.task-not-read span:nth-child(2) {
+	font-weight: bold;
+}
+
+.task-read span:nth-child(2){
+	font-weight: normal;
+}
+
+.ExpenseData
+{
+    width:100%;
+    border-width:thick;
+    border-color:red;
+}
+/*complete/incomplete indicator*/
+.task-col-4:before {
+    font-family: 'Glyphicons Halflings';
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    line-height: 1.5em;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.task-completed span:last-child:before {
+  content: "\e013";
+  background-color: green;
+
+}
+
+.task-not-completed span:last-child:before {
+  content: "\e162";
+  background-color: red;
+}
+
+
+.task-col-3 {
+	cursor: pointer;
+	position: relative;
+}
+
+.task-col-2 {
+	width: 70%;
+}
+
+/* -----------task details pop-over----------------*/
+.task-details {
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	height: 70%;
+	width: 70%;
+	border: 1px solid gray;
+	border-radius: 3px;
+	background-color: lightyellow;
+	box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.75);
+	z-index:1;
+}
+
+.task-details div {
+	position: relative;
+	border-bottom: 1px solid lightgray;
+	text-align: left;
+	margin: 3px;
+}
+
+.task-details div:last-child {
+	border-bottom: none;
+}
+
+.task-details div span {
+	display: inline-block;
+	vertical-align: top;
+	word-wrap: break-word; 
+}
+
+.task-details div span:first-child {
+	font-weight: bold;
+} 
+
+.task-details div span:last-child {
+	position: relative;
+	width: 70%;
+	float: right;
+}
+/* ----------- end task details pop-over----------------*/
+
+/*the recent activity widget*/
+.widget-box-recent-activity th {
+	padding: 3px;
+	height: 35px;
+	background-color: #ebebeb;
+	border-bottom: 1px solid #ddd;
+	border-right:  1px solid #fff;
+}
+
+/*tbody td {
+	padding: 3px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	border-right:  1px solid #fff;
+}
+
+tbody td:first-child {
+	cursor: pointer;
+	transition: .3s .2s;
+}
+
+tbody td:first-child:hover {
+	font-weight: bold;
+}
+
+
+tr:nth-child(even) {background-color:#f6f6f6;}    */
+tr:nth-child(odd) {background-color:#fff;} 
+tr:hover {
+	background-color: #eee;
+}   

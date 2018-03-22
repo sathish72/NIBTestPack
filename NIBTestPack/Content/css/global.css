@@ -1,0 +1,1505 @@
+/* normalisation */ 
+body, body * {
+    padding: 0; 
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+a:hover {
+    color: #66ccff;
+}
+
+th {
+	font-weight: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*borders for debugging*/
+.br	{
+	border: 1px dashed red;
+}
+.bg	{
+	border: 1px dashed green;
+}
+
+@font-face {
+	font-family: "dinweb";
+	src: 	url("../fonts/DINWeb.woff"),
+			url("../fonts/DINWeb.eot");
+}
+
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?8ixmih');
+	src:url('../fonts/icomoon.eot?8ixmih#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?8ixmih') format('truetype'),
+		url('../fonts/icomoon.woff?8ixmih') format('woff'),
+		url('../fonts/icomoon.svg?8ixmih#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.html-btn {
+	text-align: center;
+	border: 1px solid #ddd;
+	min-width: 75px;
+	padding: 5px;
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	text-shadow: 0 1px 0 #fff;
+	background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+	background-repeat: repeat-x;
+	border-radius: 3px;
+	border-color: #ccc;
+}
+
+.html-btn-en {
+	color: #444;
+	cursor: pointer;
+}
+.html-btn-dis {
+	color: #c3c3c3;
+	cursor: default;
+}
+
+button[disabled].html-btn {
+	color: #c3c3c3;
+  background-color: #eee;
+	cursor: default;
+	background-image: none;
+}
+
+.html-btn:hover {
+  background-color: #e0e0e0;
+	background-image: none;
+}
+
+.mbs-button {
+	display: inline-block;
+	overflow: hidden;
+	font: 15px 'dinweb', helvetica;
+	color: #fff;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 30px;
+	line-height: 1.4;
+	padding: 7px 10px 7px 10px;
+	border-radius: 5px;
+	text-align: center;
+	background: #66ccff;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.wbox {
+	position: relative;
+	border: 1px solid lightgray;
+	min-width: 200px;
+	max-width: 800px;
+	min-height: 200px;
+	border-radius: 5px 5px 0 0;
+}
+
+/*light-blue header*/
+.wbox-header {
+	position: relative;
+	background-color: #66ccff;
+	color: white;
+	width: 100%;
+	height: 30px;
+}
+
+input[type="range"] {
+	vertical-align: middle;
+}
+
+
+.short-input-250px,
+.short-input-250px > input,
+.short-input-250px > select {
+	width: 250px;
+}
+
+.mbs-box-section {
+ 	border-bottom: 1px solid #CCCCCC;
+	padding: 6px;
+}
+
+.overflow-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.message-slide-warning,
+.message-slide-success,
+.message-slide-failure {
+	font-weight: bold;
+	padding: 5px;
+	display: none;
+}
+
+.message-slide-warning {
+	color: #e8a713;	
+	border-top: 1px solid #e8a713;
+}
+
+.message-slide-success {
+	color: green;	
+	border-top: 1px solid green;
+}
+
+.message-slide-failure {
+	color: red;	
+	border-top: 1px solid red;
+}
+
+.message-slide-failure * {
+	color: red;		
+}
+
+/*right-align last child of an element without floating; also vertical align middle*/
+.lchild-r-align {
+	position: relative;
+}
+.lchild-r-align *:last-child {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.wrap-95 {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrap-fluid-ltd {
+	width: 95%;
+	max-width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wrap-fluid-1200 {
+	width: 95%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wrap-fluid-1000 {
+	width: 95%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wrap-fluid-800 {
+	width: 95%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.float-right {
+ 	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-left-inline {
+	display: inline-block;
+	float: left;
+}
+.float-right-inline {
+	display: inline-block;
+	float: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.has-tooltip:after {
+	content: attr(data-tooltip);
+	top: 35px;
+	left:-99999px;
+	min-width: 150px;
+	border: 1px solid lightgray;
+	background-color: lightyellow;
+	border-radius: 8px;
+	padding: 5px;
+	color: #666;
+	box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.75);
+	line-height: 1;
+	position: absolute;
+	opacity: 0;
+	transition: opacity .3s .5s;
+	z-index: 1;
+}
+
+.has-tooltip:hover:after {
+	opacity: 1;
+	left:10px;
+} 
+
+.horiz-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*horizontaly center inline content like buttons within a div, etc.*/
+.hor-cent-cont-inl {
+  display: block;
+  text-align: center;
+}
+
+.vert-center {
+	position: relative;
+	display: block;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.v-align-top {
+	vertical-align: top;
+}
+.v-align-middle {
+	vertical-align: middle;
+}
+
+.text-style-1 {
+	padding: 5px;
+	font-weight: bold;
+}
+
+.limit-hi-scroll-sml {
+	max-height: 500px;
+	overflow: auto;
+}
+
+.border-color-plain {
+	border-color: #ddd;
+}
+.border-color-alert {
+	border-color: tomato;	
+}
+
+.overflow-auto {
+	overflow: auto;	
+}
+
+.width-50px 	{width: 50px;}
+.width-75px 	{width: 75px;}
+.width-100px 	{width: 100px;}
+.width-150px 	{width: 150px;}
+.width-170px 	{width: 170px;}
+.width-250px 	{width: 250px;}
+.width-50pc 	{width: 50%;}
+.width-70pc 	{width: 70%;}
+.width-90pc 	{width: 90%;}
+.width-100pc	{width: 100%;}
+.width-80pc {width: 80%;}
+.width-60pc {max-width: 60%;}
+.width-30pc {max-width: 30%;}
+.width-20pc {max-width: 20%;}
+
+.width-60pc {width: 60%;}
+.width-30pc {width: 30%;}
+.width-20pc {width: 20%;}
+.hi-100pc {height: 100%;}
+
+.hiddn,
+div.hiddn {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+/* 2 divs of equal width side by side with space between them */
+.divs-2-eq-48 div {
+	display: inline-block;
+	width: 48%;
+}
+.divs-2-eq-48:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.divs-2-eq-48 div:first-child {	
+	float: left;
+}
+.divs-2-eq-48 div:nth-child(2) {	
+	float: right;
+}
+
+/*====================================================
+	blockout, header, nav, main-menu - moved to menu-old.css
+======================================================*/
+.contents {
+    position: relative;
+	display: block;
+	top: 85px;
+	width: 100%;
+}
+
+
+/* ======================================================
+	Dropdown that imitates a standard dropdown 
+========================================================= */
+.normal-dropdown {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 7px 20px 3px 7px;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	cursor: pointer;
+	z-index: 1;
+	font: 15px 'dinweb', helvetica;
+	vertical-align: middle;
+}
+
+.normal-dropdown div {
+	display: block;
+	color: #333;
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  white-space: nowrap;
+	font: inherit;
+}
+
+.background-visible {
+	background-color: whitesmoke;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #FCFCFC),color-stop(0.63, #DEDEDE));
+}
+
+.normal-dropdown  div:after {
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  top: 8px;
+  right: 5px;
+	content: "\e252";
+	color: #777;
+	font-size: 10px;
+}
+
+/*remove the d/d look when single entry*/
+.normal-dropdown.single-entry {
+	background-image: none;
+	cursor: default;
+}
+.normal-dropdown.single-entry div:after {
+	content:"";
+}
+
+
+.normal-dropdown ul {
+	position: absolute;
+	top: 100%;
+	margin: 0;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	display: none;
+	z-index: 1;
+	box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
+	font: inherit;
+}
+
+/*when this control is at the right hand side of the screen, the d/d can overflow; for that case use align-right class */
+.normal-dropdown.align-right ul {
+	right: 0;
+}
+
+.normal-dropdown:hover ul {
+	display: inline-block;
+}
+
+.normal-dropdown ul li {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	padding: 5px 10px 5px 10px;
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    white-space: nowrap;
+	transition: .3s;
+	font: inherit;
+}
+.normal-dropdown ul li a {
+	color: #333;
+}
+.normal-dropdown ul li:hover a {
+	color: #fff;
+}
+
+.normal-dropdown ul li:hover {
+	background-color: #66ccff;
+	color: #fff;
+}
+
+.normal-dropdown img {
+	height: 100%;
+}
+
+.dropdown-w-buttons {
+	display: inline-block;
+	position: relative;
+	float: left;
+	height: 24px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.dropdown-w-buttons > div:nth-child(1),
+.dropdown-w-buttons input,
+.dropdown-w-buttons label {
+	cursor: pointer;
+}
+
+.dropdown-w-buttons > div:nth-child(2) {
+	display: none;
+	position: absolute;
+	top: 100%;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	z-index: 3;
+	box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
+}
+
+.dropdown-w-buttons ul {
+	display: inline-block;
+	top: 100%;
+	width: 100%;
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown-w-buttons ul li {
+	display: block;
+	padding: 3px 10px 3px 10px;
+	text-align: left;
+	width: 100%;
+	font-weight: normal;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.dropdown-w-buttons ul li table {
+	width: 100%;
+}
+
+.dropdown-w-buttons ul li table col:first-child,
+.dropdown-w-buttons ul li table col:last-child {
+	width: 1px;
+}
+
+.dropdown-w-buttons table tr td:last-child>img {
+	float: right;
+}
+
+.dropdown-w-buttons ul li table td {
+	padding: 0;
+	border:none;
+}
+
+.dropdown-w-buttons ul li:hover td {
+	color: #fff;
+}
+
+.dropdown-w-buttons ul li:hover {
+	background-color: #66ccff;
+	color: #fff;
+}
+
+.dropdown-w-buttons ul li img {
+	height:20px;
+	width: auto;
+}
+
+.dropdown-w-buttons button {
+	min-width: 60px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.dropdown-w-buttons > div:first-child {
+	width: 100%;
+	height:100%;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	text-align: left;
+}
+
+.dropdown-w-buttons > div:first-child > span {
+	display: inline-block;
+	width: 90%;
+	padding-left: 2px;
+	font-size: 14px;
+	padding-top: 4px;
+}
+
+.dropdown-w-buttons div:first-child:after {
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+	content: "\e252";
+	color: #777;
+	font-size: 10px;
+}
+
+.dropdown-w-buttons div:nth-child(2) div {
+	margin: 7px;
+	white-space: nowrap;
+}
+
+.dropdown-w-buttons input {
+	margin-top: 3px;
+}
+.dropdown-w-buttons label {
+	display: inline-block;
+	width: 100%;
+	white-space: nowrap;
+	font-size: 14px;
+	margin-top: 2px;
+	margin-left: 3px;
+	color: inherit;
+}
+
+.dd-date-range {
+	display: inline-block;
+	position: relative;
+	float: left;
+	height: 24px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.dd-date-range > div:nth-child(2) {
+	display: none;
+	position: absolute;
+	top: 100%;
+	width: 200px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	z-index: 1;
+	box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
+}
+
+.dd-date-range ul {
+	display: inline-block;
+	background-color: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+.dd-date-range ul li {
+	display: block;
+	padding: 4px 5px 4px 3px;
+	text-align: left;
+	font: inherit;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.dd-date-range button {
+	min-width: 60px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.dd-date-range > div:first-child {
+	width: 100%;
+	height:100%;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	text-align: left;
+}
+
+.dd-date-range > div:first-child > span {
+	display: inline-block;
+	width: 90%;
+	padding-left: 2px;
+	font-size: 14px;
+	padding-top: 4px;
+}
+
+.dd-date-range div:first-child:after {
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+	content: "\e252";
+	color: #777;
+	font-size: 10px;
+}
+
+.dd-date-range div:nth-child(2) div {
+	padding: 5px;
+	white-space: nowrap;
+}
+
+.dd-date-range input {
+	float: right;
+	width: 75%;
+	height: 22px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.dd-date-range label {
+	display: inline-block;
+	font-size: 14px;
+	margin-top: 5px;
+	margin-left: 3px;
+	color: inherit;
+}
+
+.tag-container {
+	margin: 0;
+	margin-top: 5px;
+}
+
+.tag-container>li,
+.tag-item {
+  display: inline-block;
+  font-size: 15px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 1px 3px 1px 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  margin: 2px;
+}
+
+.tag-container>li>img,
+.tag-item>img {
+	display: inline;
+	height: 18px;
+	width: auto;
+	vertical-align: middle;
+	margin-left: 3px;
+	cursor: pointer;
+}
+
+tr.item-removed td,
+td.item-removed,
+.tag-container>li.item-removed,
+.tag-item.item-removed {
+	text-decoration: line-through;
+}
+
+.tag-container>li.tag-dies {
+	background-color: tomato;
+}
+
+.tag-container>li:hover,
+.tag-item:hover {
+  border: 1px solid #aaa;
+}
+
+.tag-container>li>span:after {
+  font-family: 'Glyphicons Halflings';
+	content: "\e014"; 
+	color: tomato;
+	font-size: 10px;
+	padding: 2px;
+	margin: 2px 0 0 2px;
+	border: none;
+	cursor: pointer;
+}
+
+/*separate any right-hand side label*/
+.input-txt-std {
+	margin-right: 3px;
+}
+
+.input-box-format, 
+.input-txt-std {
+	height: 22px;
+	font-size: 14px;
+	line-height: 1.3;   
+	padding: 2px 3px 0 3px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+  
+.input-box-format 
+ {
+	width: 100%;
+}
+
+.input-box-format option,
+.input-txt-std option {
+	font-size: 14px;
+}
+.input-box-format[disabled],
+.input-txt-std[disabled] {
+	background-color: #eee;
+}
+.input-box-format:not([disabled]):hover,
+.input-txt-std:not([disabled]):hover {
+	border: 1px solid #ddd;
+}
+
+/* a div that looks like disabled input; add "width-" class as required*/
+.sim-dis-input,
+.sim-dis-input-expand {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.1;
+	padding: 3px 3px 1px 3px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	color: #666;
+	background-color: #eee;
+	min-height: 1.6em;
+}
+.sim-dis-input {
+	height: 22px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lbl-small {
+	font-size: 14px;
+	color: inherit;
+}
+
+.glyph-icomoon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-button {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+}
+.icon-button img,
+.icon-button span {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+/* --- a reduced height <div> or <span> button with full caption - base --- */
+.btn-caption-len-sm {
+	display: inline-block;
+  white-space: nowrap;
+	padding: 3px 7px 3px 7px;
+	border-radius: 4px;
+	text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+
+/* unset height <button> with variable width */
+.btn-mbs-sml {
+	position: relative;
+	border: none;	
+	border-radius: 4px;
+	padding: 4px 7px 2px 7px;
+	outline: none;
+	white-space: nowrap;
+	font-weight: normal;
+	line-height: 1;
+	font-family: inherit;
+	min-width: 50px;
+}
+
+/*the button has an icon image on the left*/
+.btn-mbs-sml.btn-icon {
+	padding-left: 20px;
+}
+.btn-mbs-sml.btn-icon img,
+.btn-mbs-sml.btn-icon-r img  {
+	max-width: 15px;
+	max-height: 15px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 2px;
+}
+
+/*the button has image on the right*/
+.btn-mbs-sml.btn-icon-r {
+	padding-right: 15px;
+	position: relative;
+}
+
+
+/*button where main visual is an icon (with no text or minor text)*/
+.btn-mbs-sml.btn-icon-based {
+	height: 32px;
+	min-width: 32px;
+}
+.btn-mbs-sml.btn-icon-based img {
+	display: table-cell;
+	max-height: 26px;
+	width: auto;
+	vertical-align: middle;
+	margin: 0 auto;
+}
+
+.btn-mbs-sml:focus {
+	outline: 1px solid lightblue;
+} 
+
+/*color set (bg color + color) can be applied to buttons, etc.*/
+.colorset-mbs-blue {
+	color: #fff;
+	background-color: #66ccff;
+}
+
+.colorset-mbs-blue[disabled] {
+	background-color: #6D8C9B;
+	color: #ddd;
+}
+
+.colorset-mbs-blue:not([disabled]):hover {
+	background-color: #50b0e0;	
+} 
+
+/*color set (bg color + color) can be applied to buttons, etc.*/
+.colorset-mbs-gray {
+	color: #fff;
+	background-color: #bbb;
+}
+.colorset-mbs-gray[disabled] {
+	background-color: #ccc;
+	color: #ddd;
+}
+
+.colorset-mbs-gray:not([disabled]):hover {
+	background-color: #aaa;	
+} 
+
+
+/*---------------------------------
+	modifiers: base buton + small, etc.
+-----------------------------------*/
+.icon-button-small {
+	width: 22px;
+	height: 22px;
+	line-height: 1;
+	font-size: 25px;
+}
+.icon-button-small span {
+	font-size: .6em;
+}
+
+/*gray*/
+/*---------------------------------
+	... + gray bg
+-----------------------------------*/
+.icon-button-gray {
+	background-color: #ddd;
+	color: #fff;
+	border: 1px solid #ccc;
+}
+
+/*---------------------------------
+	... gray bg :hover
+-----------------------------------*/
+.icon-button-gray:hover {
+	background-color: #c3c3c3;
+}
+
+/*---------------------------------
+	... gray bg :disabled
+-----------------------------------*/
+.icon-button-gray-disabled {
+	background-color: #ddd;
+	color: #eee;
+	cursor: default;
+}
+/*end gray*/
+
+
+
+
+/*smartline blue*/
+/*---------------------------------
+	... + blue (#66ccff) bg
+-----------------------------------*/
+.icon-button-slblue {
+	background-color: #66ccff;;
+	color: #fff;
+}
+
+/*---------------------------------
+	... slblue bg :hover
+-----------------------------------*/
+.icon-button-slblue:hover {
+	background-color: #50b0e0; /* ! this color is not on the sl website ! */
+}
+
+.data-header-level-0,
+.data-header-level-0 th {
+	position: relative;
+	font-weight: bold;
+ 	/*border-bottom: 1px solid #ddd; */
+ 	height: 35px;
+}
+.data-header-level-0 {
+	padding: 10px 3px 3px 3px;
+}
+
+.data-header-level-0 img {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	cursor: pointer;
+	transform: translateY(-50%);
+	-webkit-filter: opacity(0.5);
+}
+.data-header-level-0 button {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* --- A bolder text with underline and optional spans (first span should be text) --- */
+.data-header-level-1, 
+.data-header-level-1 th {
+	position: relative;
+ 	border-bottom: 1px solid #ddd;
+	width: 100%;
+}
+.data-header-level-1>span {
+	display: inline-block;
+	overflow: hidden;
+  text-overflow: ellipsis;
+	white-space: nowrap; 
+ 	vertical-align: bottom;
+}
+.data-header-level-1>span:first-child {
+	width: 60%;
+} 
+.data-header-level-1>span:last-child {
+	position: absolute;
+	text-align: right;
+	right: 0;
+	bottom: 1px;
+}
+.data-header-level-1 button {
+	position: absolute;
+	right: 0;
+	bottom: 3px;
+}
+
+.data-row td {
+ 	border-bottom: 1px solid #eee;
+}
+
+.data-row td img {
+	display: block;
+  margin: 0 auto;
+  max-height: 20px;
+  width: auto;
+}
+
+.header-plain-gen {
+	width: 100%;
+ 	background-color: #efefef; 
+ 	border-bottom: 1px solid #CCC;
+ 	padding: 3px;
+}
+
+.header-mbs-brand {
+	background-color: #66ccff;
+	color: #fff;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: 1em;
+	font-weight: bold;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.txt-bold {
+	font-weight: bold;
+}
+
+/* asterisk - displayed always on all mandatory fields */
+.field-prompt-ast:after {
+	content: "*";
+	color: black;
+    margin-left:5px;
+}
+
+/*border and message - displayed after validation*/
+.field-prompt {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	border: 1px solid red;
+}
+
+.field-prompt:after {
+	position: absolute;
+	bottom: -7px;
+	left: 10px;
+	content: attr(data-msg);
+	font-size: .7em;
+	line-height: .7em;
+	background-color: #fff;
+	padding: 1px 2px 1px 2px;
+	color: tomato;
+}
+/* --- warning messages on mandatory or invalid input END --- */
+
+
+/* --- text (or a link) to indicate a link on mouseover; used to link to edit/create screens, etc. START --- */
+.text-link, .text-link span {
+	color: inherit;
+	outline: none;
+	transition: color .1s;
+	font-size: inherit;
+}
+.text-link:hover, .text-link span:hover {
+	color: #66ccff;
+	cursor: pointer;
+}
+
+/*another version for diff layouts*/
+.text-link-2 {
+	display: inline-block; 
+	width: 100%;
+	color: inherit;
+	outline: none;
+	transition: color .1s;
+	font-size: inherit;
+}
+
+/*corporate color text item */
+.selected-text-item {
+	background-color: #66ccff;
+	color: #fff;
+	font-weight: bold;
+}
+
+/*some selected items; corporate blue color would be too bright*/
+.selected-list-items {
+	background-color: #dee9ef;
+}
+
+.table-outline {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: visible;
+}
+
+.input-group-horiz {
+	white-space: nowrap;
+}
+
+/*set left margin to all but first input in a horizontal group of inputs*/
+.input-group-horiz > input:nth-child(n+2),
+.input-group-horiz > select:nth-child(n+2) {
+	margin-left: 10px;
+}
+
+.input-group-horiz>input+label {
+	padding-left: 5px;
+	position: relative;
+	top: -1px;
+}
+
+/*space horizontal elements in a group*/
+.group-horiz-space-s>*:nth-child(n+2) {
+	margin-left: 10px;
+}
+
+/* vertical layout */
+.input-group-vert > * {
+	display: block;
+}
+
+
+/*wrapper to keep icons next to each other in a wider container*/
+.wrap-icons {
+	text-align: center;
+}
+table.tbl-view td .wrap-icons>img,
+table.tbl-view td .wrap-icons>a,
+.wrap-icons>img,
+.wrap-icons>a {
+	cursor: pointer;
+	display: inline;
+	vertical-align: middle;
+}
+
+.wrap-icons>img:nth-child(n+2),
+.wrap-icons>a:nth-child(n+2) {
+	margin-left: 5%;
+}
+
+/*maximize clickable area for single radio button or checkbox that doesn't have any label*/
+.max-click-area {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.max-click-area>input[type="checkbox"] {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+label[disabled] {
+	color: #ddd;
+}
+
+.icon-action {
+	cursor: pointer;
+}
+
+/* === a simple table === */
+table.tbl-utl {
+	table-layout: fixed;
+}
+table.tbl-utl thead tr th, 
+table.tbl-utl tbody tr td,
+/*when tbl-utl is inside another table like tbl-details*/
+table table.tbl-utl tbody tr td {
+	position: relative;
+	word-break: keep-all;
+	padding-left: 2px;
+	height: 25px;
+}
+
+table.tbl-utl>thead>tr>th {
+	border: 1px solid #fff;
+	background-color: #003366;
+	color: #fff;
+}
+/*center icons*/
+table.tbl-utl td>img,
+table.tbl-utl th>img {
+	display: block;
+	margin: 0 auto;
+	max-height: 22px;
+	width: auto;
+}
+
+/* center a group that consists of icons and a text */
+table.tbl-utl td.center-group {
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.tbl-utl td.center-group div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+table.tbl-utl td.center-group div>img,
+table.tbl-utl th.center-group div>img {
+	vertical-align: middle;
+}
+
+
+/*alternate tr background*/
+table.alt-bg-color>tbody>tr:nth-child(even){
+	background-color:#f6f6f6;
+}
+/*all rows have bottom border dotted*/
+.row-btm>tbody>tr>td {
+	border-bottom: 1px dotted #ddd;
+}
+/* === tbl-utl END === */
+
+
+/* === prepend/append an input with $, %, etc. === */
+.pend {
+	position: relative;	
+}
+.pend:after {
+	position: absolute;
+	top: 0;
+}
+.pre:after {
+	content: "$";
+	right: 100%;
+	color: #bbb;
+}
+.app:after {
+	content: "%";
+	left: 100%;
+	color: #bbb;
+}
+.app-yrs:after {
+	content: "yrs";
+	left: 100%;
+	color: #bbb;
+}
+.ast:after {
+	content: "*";
+	left: 100%;
+	color: #000;
+}
+
+
+
+/*page title*/
+.tbl-detail-page-header {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.tbl-detail-page-header td button {
+	position: absolute;
+	/*right: 5px;*/
+}
+.tbl-detail-page-header td {
+	position: relative;
+	font-size: 1.5em;
+	vertical-align: baseline;
+	overflow: hidden;
+  text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.tbl-detail-page-header td:first-child {
+	color: #aaa;
+	letter-spacing: -1px;
+}
+
+.standout-1 {
+  font-size: 1.4em;
+  color: #aaa;
+}
+
+/* hint that first column has labels, not data*/
+table.first-col-is-label tbody tr td:first-child {
+	background-color: #bbb;
+	color: #fff;
+}
+
+/* a borderd box that contains 2 horizontal areas split approx 10/90 */
+/* (like icon + description)                                 */
+.msg-split-1 {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 2px;
+}
+.msg-split-1>* {
+	display: inline-block;
+}
+.msg-split-1>*:first-child {
+	max-width: 10%;
+	vertical-align: top;
+}
+.msg-split-1>*:nth-child(2) {
+	width: 88%;
+}
+
+
+
+.grid-container-50-50 div div {
+	width: 48%;
+}
+.grid-container-50-50 div div:first-child {
+	float: left;
+}
+.grid-container-50-50 div div:nth-child(2) {
+	float: right;
+	margin-left: 2%;
+}
+.grid-container-50-50 div div>input+label{
+	display: inline-block;
+	margin-left: .5em;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+/* === make checkboxradio buttons joined in one bar === */
+.button-bar>label {
+	float:left;
+	margin: 0;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+.button-bar>label:first-of-type {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	position: relative;
+	left: 1px;
+}
+.button-bar>label:last-of-type {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	position: relative;
+	left: -1px;
+}
+
+.child-vert-align-mid>* {
+	vertical-align: middle;
+}
+
+.disabled-tr{
+    color: #fff;
+    background-color: #eee;
+}
+
+tr.disabled-tr>td,tr.disabled-tr>td>a,tr.disabled-tr>td>a:hover{
+    color: grey;
+    background-color: #eee;
+    cursor:default;
+}
+
+/*.tbl-view.has-record-selector Removing internal borders for the grids*/
+table.tbl-view.has-record-selector>tbody>tr>td{
+        border-width:0;
+}
+/*.tbl-view.has-record-selector Removing internal borders for the grids*/
+table.tbl-view.has-record-selector>tbody>tr>td{
+        border-width:0;
+}
+
+.internal-accordion-scroll{
+    height:200px;
+}
+
+table.tbl-view td.wide-separator-right{
+    border-right-width:8px;
+}
+
+/*information tables standard (such as Verification)*/
+table.info-table td li{
+    margin: 0 0 10px 0;
+    list-style: disc;
+}
+
+fieldset{
+    margin:0;
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border-radius:2px;
+    border: 1px solid #ddd;
+}
+
+fieldset table.tbl-view>tbody>tr:nth-child(odd),fieldset table.tbl-view>tbody>tr:nth-child(even){
+    background-color:white;
+}
+fieldset table.tbl-view>tbody>tr:nth-child(odd) td,fieldset table.tbl-view>tbody>tr:nth-child(even) td{
+    border-color:white;
+}  
+
+
+/*grids with fixed heading*/
+
+#searchViewPlaceHolder>table.has-record-selector{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+#searchViewPlaceHolder>table.has-record-selector thead {  
+     flex: 0 0 auto;
+    width: calc(100%);
+}
+#searchViewPlaceHolder>table.has-record-selector tbody { 
+    flex: inherit;
+    display: block;
+}
+#searchViewPlaceHolder>table.has-record-selector tbody tr {
+    width: 100%;
+}
+
+
+#searchViewPlaceHolder>table.has-record-selector thead,
+#searchViewPlaceHolder>table.has-record-selector tbody tr {
+    display: table;
+    
+}
+
+#searchViewPlaceHolder>table.has-record-selector tbody tr:not(.tr-group-expanded) {
+    table-layout: fixed;
+}
+
+
+/*--end of script form thead fixed grids. Unavailable datalist thead moment--*/
+
+.bg-color-white{
+    background-color:white;
+}
+
+.font-weight-700{
+    font-weight: 700;
+}
+
+

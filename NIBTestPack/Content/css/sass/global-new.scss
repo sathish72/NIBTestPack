@@ -1,0 +1,364 @@
+﻿//Modules and Variables
+@import "../../../stylesheets/bootstrap/_variables";
+@import "../../../stylesheets/bootstrap/mixins/clearfix";
+@import "../../../stylesheets/bootstrap/mixins/grid-framework";
+@import "../../../stylesheets/bootstrap/mixins/grid";
+@import "../../../stylesheets/bootstrap/mixins/table-row";
+@import "../../../stylesheets/bootstrap/grid";
+@import "../../../stylesheets/bootstrap/glyphicons";
+@import "../../../stylesheets/bootstrap/tables";
+
+//Partials
+@import "partials/variables";
+@import "partials/base";
+@import "partials/tables";
+@import "partials/print";
+
+
+body, body * {
+    padding: 0;
+    font-size: 16px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.ui-widget {
+    font-family: $font-stack;
+}
+
+body {
+    @extend .ui-widget;
+    color: $black-colour;
+    margin: 0;
+}
+/*Colours*/
+.blue-default-colour{
+    background-color: $blue-colour;
+}
+/*titles*/
+.main-title {
+    font-size: $std-font-main-title;
+    float: left;
+    @extend .width-60pc;
+    @extend .table-link;
+}
+
+/*menu bootstrap*/
+
+.menu-bootstrap {
+    float: left;
+    width: 251px;
+    border: none;
+    margin-top: 3em;
+}
+
+.menu-bootstrap-row {
+    height: 33px;
+    line-height: 33px;
+    background-color: #e2e2e2;
+}
+
+.menu-bootstrap-col {
+    @include bootstrap-menu-col(true);
+}
+
+.menu-bootstrap-col-last {
+    @include bootstrap-menu-col(false);
+}
+/*Validation messages*/
+.field-validation-error {
+    margin-right: 100px;
+}
+
+span.field-validation-error * {
+    font-size: 14px;
+    color: $red-colour;
+}
+
+/*warning validation icon settings*/
+.warning-validation-icon {
+    @include position-absolute;
+    top: 7px;
+    left: -20px;
+}
+
+/*Links*/
+.disabled-link {
+    cursor: $cursor-default;
+    text-decoration: $text-decoration-line-through;
+}
+
+    .disabled-link:hover {
+        @extend .disabled-link;
+        color: $black-colour;
+    }
+
+/*positions*/
+.position-relative {
+    @include position-relative;
+}
+
+.plus-expand:hover + .expanded-menu {
+	display: block;
+}
+
+.position-absolute {
+    @include position-absolute;
+}
+
+/*Numeric position labels in tables*/
+
+.numeric-label{
+    text-align: right;
+    padding-right: 7px !important;
+}
+
+.text-label {
+    padding-left: 7px !important;
+}
+
+
+
+main {
+    @extend .position-relative;
+    @extend .top-0;
+}
+
+.outline-1px {
+    @include outline;
+}
+
+.pend:after, .absolute-pos-top-0 {
+    @extend .position-absolute;
+    @extend .top-0;
+}
+
+.break-line {
+    word-wrap: break-word;
+    @extend .width-90pc;
+}
+
+.white-space-normal {
+    white-space: normal !important;
+}
+
+/*capital letter first*/
+.capital-letter {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/*Print reports*/
+.to-print, .print-logo{
+    display:none;
+}
+
+
+/*fonts*/
+.font-weight-bold {
+    font-weight: bold;
+}
+
+/*elements*/
+.button {
+    @include button;
+}
+
+.checkbox {
+    width: $std-checkbox-size;
+    height: $std-checkbox-size;
+}
+
+.next-button {
+    @extend .button;
+    @extend .spacer-left-5;
+}
+ 
+
+
+legend {
+    width: auto;
+    padding: 0 5px;
+    border-bottom: none;
+    @extend .spacer-left-5;
+}
+
+.large-icon-size {
+    font-size: $large-icon-size;
+    vertical-align: middle;
+}
+
+.question-icon {
+    @extend .large-icon-size;
+    color: $question-icon-background-color;
+}
+
+/*details*/
+
+div:active, summary div:focus, summary:active, summary:focus{
+    outline-color:white;
+}
+/*inputs*/
+.input-std {
+    @include input-txt-std;
+}
+
+.long-txt-width-std {
+    width: $std-long-input;
+}
+
+.text-area-height-std {
+    height: $std-text-area-height;
+    @extend .position-relative;
+}
+
+
+.xshort-input{
+     @extend .input-std;
+    width: $xshort-width;
+}
+
+.short-input {
+    width: $std-short-input;
+    @extend .input-std;
+}
+
+.long-input {
+    @extend .long-txt-width-std;
+    @extend .input-std;
+}
+
+.currency-input {
+    @extend .short-input;
+    @extend .text-align-right;
+}
+
+.text-area-general {
+    @extend .input-std;
+    @extend .long-txt-width-std;
+    @extend .overflow-hidden;
+    resize: $none;
+}
+
+.text-area {
+    @extend .text-area-general;
+    height: $focus-area-height;
+}
+
+.text-area-height-std .text-area {
+    @extend .text-area-general;
+    @extend .text-area-height-std;
+}
+
+.text-area-height-std .text-area-disabled {
+    @extend .text-area-general;
+    @extend .text-area-height-std;
+    background-color: $disabled-color;
+}
+
+    .text-area-height-std .text-area:focus, .text-area-height-std .text-area-disabled:focus {
+        @extend .overflow-y-auto;
+        height: $focus-area-height;
+        z-index: 100;
+    }
+
+.overflow-default {
+    @extend .overflow-y-auto;
+    height: 100vh;
+}
+
+.default-scroll-height{
+    height: $default-scroll-height;
+}
+
+.custom-icon {
+    display: $display-inline-block !important;
+}
+
+.border-bottom {
+    border-bottom: $std-border;
+}
+.border-bottom-white {
+    border-bottom: $border-white;
+}
+
+.border-right {
+    border-right: $std-border;
+}
+
+.display-inline-block {
+    display: $display-inline-block;
+}
+
+/*styles for select2*/
+.select2-container--default .select2-selection--single, .select2-dropdown, .select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #ddd !important;
+}
+
+
+.wrapping-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.single-line-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 1;
+}
+
+/*Keep these lines for validation in a very bottom all the time!*/
+.input-validation-error {
+    border-color: $red-colour;
+}
+
+.display-none {
+    display: $none;
+}
+
+input[type='radio'].input-validation-error, input[type='checkbox'].input-validation-error, input[type='text'].input-validation-error, textarea.input-validation-error {
+    outline: $std-border-error;
+}
+
+input.read-only-text-input {
+    background: none;
+    padding-right: 20px;
+}
+
+input.read-only-text-input:not(.input-validation-error) {
+    border: none;
+}
+
+.red-color {
+    color: $red-colour;
+}
+
+input.read-only-text-input.invalid-value {
+    color: $red-colour;
+    font-weight: 600;
+}
+
+.ul-tree a.inactive-link {
+    padding: 9px 0 7px 5px;
+    color: #ccc;
+    pointer-events: none;
+}
+
+.width-auto{
+    width: auto !important;
+}
+
+	
+.border-right {
+    border-right: $std-border;
+}

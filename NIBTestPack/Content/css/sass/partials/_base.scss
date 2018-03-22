@@ -1,0 +1,228 @@
+﻿
+
+
+
+//Mixins
+@mixin table{
+    width:$width-100pc;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@mixin table-comment($table-name,$parent-module){
+    /*Table #{$table-name} in #{$parent-module}*/
+}
+
+//Mixin for building the css for table colgroups
+@mixin table-cols($cols,$start){
+     
+     @for $i from $start through length($cols){
+        >colgroup>col:nth-child(#{$i}){
+             width: nth($cols,$i);
+        }
+    }
+}
+
+/*glyphicons*/
+
+@each $icon-size,$icon-color, $icon-source, $glyphicon-class,$background-color in
+     ($large-icon-size,$icon-background-color-default,glyphicon-plus-sign,glyphicon-add),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-plus-sign,glyphicon-add-medium),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-ok,glyphicon-ok),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-paperclip,glyphicon-paperclip),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-home,glyphicon-home),
+     ($medium-icon-size,$question-icon-background-color,glyphicon-question-sign,glyphicon-question),
+     ($medium-icon-size,$icon-override-background-color,glyphicon-star,glyphicon-star),
+     ($medium-icon-size,$icon-override-background-color,glyphicon-star-empty,glyphicon-star-empty),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-trash,glyphicon-trash),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-copy,glyphicon-copy),
+     ($medium-icon-size,$red-colour,glyphicon-minus-sign,glyphicon-minus-sign),
+     ($medium-icon-size,$red-colour,glyphicon-minus-sign,glyphicon-minus-sign),
+     ($medium-icon-size,$red-colour,glyphicon-remove-sign,glyphicon-remove-sign),
+     ($medium-icon-size,$green-colour,glyphicon-ok-sign,glyphicon-ok-sign-green),
+     ($medium-icon-size,$icon-override-background-color,glyphicon-envelope,glyphicon-envelope-mail),
+     ($medium-icon-size,$red-colour,glyphicon-envelope,glyphicon-envelope-sms),
+     ($medium-icon-size,$icon-override-background-color,glyphicon-warning-sign,glyphicon-warning-sign),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-edit,glyphicon-edit),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-print,glyphicon-print),
+     ($xsmall-icon-size,$icon-override-background-color,glyphicon-check,glyphicon-check-xsmall,background-),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-check,glyphicon-check),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-unchecked,glyphicon-unchecked),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-map-marker,glyphicon-map-marker),
+     ($medium-icon-size,$icon-background-color-default,glyphicon-save,glyphicon-save),
+     ($medium-icon-size,$blue-colour,glyphicon-plus-sign,glyphicon-plus-sign),
+     ($medium-icon-size,$green-colour,glyphicon-thumbs-up,glyphicon-thumbs-up),
+     ($xsmall-icon-size,$black-colour,glyphicon-time,glyphicon-time-xsmall)
+{
+    .mbs-#{$glyphicon-class} {
+    @extend .#{$icon-source};
+     #{$background-color}color: #{$icon-color} !important;
+    font-size: #{$icon-size}; 
+    @extend .glyphicon;
+    vertical-align: middle; 
+    }
+}
+
+
+
+/*menu row*/
+@mixin bootstrap-menu-col ($condition){
+    @if $condition==true {
+        border-bottom: 1px solid #aaa;
+    }
+        @extend .padding-left-5;
+}
+
+
+
+
+@mixin outline{
+    border: $std-border;
+    border-radius:$std-border-radius;
+}
+
+@mixin input-txt-std{
+   padding: $std-field-padding;
+   @include outline;
+}
+
+@mixin td-th{
+    position: relative;
+	font-size:1em;
+    word-break: keep-all;
+}
+
+
+/*general settings for link*/
+.table-link{
+    white-space: nowrap;
+	overflow: $hidden;
+	text-overflow: ellipsis;
+}
+
+/*general settings for arrows for changing the direction*/
+@mixin arrow-direction{
+    font-family: 'Glyphicons Halflings';
+    font-size: 12px;
+    color: $std-placeholder-colour;
+}
+
+/*positions*/
+@mixin position-relative{
+    position:relative;
+}
+@mixin position-absolute{
+    position:absolute;
+}
+/*button*/
+@mixin button {
+    color: $white-colour;
+    background-color: $hover-table-link;
+    border: $none;
+    border-radius: $std-border-radius;
+    padding: $std-btn-padding;
+    font-family: $inherit;
+}
+
+
+//utilities
+/*margin and padding sizes*/
+@each $keyword,$type, $size-name, $size-number,$size-type in 
+    (spacer,margin,top,0,px) ,
+    (spacer,margin,top,5,px) ,
+    (padding,padding,top,5,px) ,
+    (padding,padding,right,0,px) ,
+    (padding,padding,left,0,px) ,
+    (padding,padding,left,5,px) ,
+    (padding,padding,left,10,px) ,
+    (padding,padding,left,15,px) ,
+    (padding,padding,right,5,px) ,
+    (spacer,margin,top,0,px) ,
+    (spacer,margin,top,10,px) ,
+    (spacer,margin,top,20,px) ,
+    (spacer-minus,margin,top,-12,px) ,
+    (spacer,margin,top,40,px) ,
+    (spacer,margin,top,60,px) ,
+    (spacer,margin,bottom,0,px),
+    (spacer,margin,bottom,5,px),
+    (spacer,margin,bottom,10,px),
+    (spacer,margin,bottom,20,px),
+    (spacer,margin,bottom,40,px),
+    (spacer,margin,left,0,px),
+    (spacer,margin,left,5,px),
+    (spacer,margin,left,15,px),
+    (spacer,margin,left,30,px),
+    (spacer,margin,left,50,px),
+    (spacer,margin,right,5,px),
+    (spacer,margin,right,10,px),
+    (padding,padding,right,5,px),
+    (padding,padding,right,20,px) {
+    .#{$keyword}-#{$size-name}-#{$size-number} {#{$type}-#{$size-name}: #{$size-number}#{$size-type};}
+}
+
+/*absolute positions*/
+@each $type, $space, $title in
+    (top, 0, 0),
+    (top, 3px, 3px),
+    (top, 5px, 5px),
+    (top, 10px, 10px),
+    (left, 0, 0),
+    (right, 0, 0),
+    (right, 10px, 10px),
+    (right, -25px, minus-25px),
+    (right, 60px,60px){
+        .#{$type}-#{$title} {
+            #{$type}: #{$space};    
+        }
+}
+
+
+/*align*/
+@each $side in left,right, center{
+    .text-align-#{$side} {
+	    text-align: #{$side};
+    }
+}
+ /*overflow*/
+@each $overflow-direction,$overflow-type, $important in
+     (overflow-y,$auto, ),
+     (overflow-x,$auto, ),
+     (overflow,$inherit, !important),
+     (overflow,$hidden,){
+    .#{$overflow-direction}-#{$overflow-type} {
+       #{$overflow-direction}: #{$overflow-type} #{$important};
+    }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $std-placeholder-colour;
+}
+
+/*width settings*/
+@each $type, $size, $measure,$mark in 
+(width,50,px,px),
+(width,75,px,px),
+(width,100,px,px),
+(width,150,px,px),
+(width,170,px,px),
+(width,200,px,px),
+(width,250,px,px),
+(min-width,160,px,px),
+(max-width,150,px,px),
+(min-width,1300,px,px),
+(width,70,pc,'%'),
+(width,90,pc,'%'),
+(width,100,pc,'%'),
+(width,80,pc,'%'),
+(width,60,pc,'%'),
+(width,10,pc,'%'),
+(width,20,pc,'%') {
+    .#{$type }-#{$size}#{$measure} {
+        #{$type}: #{$size}#{$mark};
+    }
+}
+
+
+
+
+

@@ -1,0 +1,19 @@
+﻿@using System.Web.Mvc.Html
+@model BusinessService.DTOs.MoneyDTO
+
+
+@{
+    Layout = "~/Views/Shared/_LoanTrackingEditLayout.cshtml";
+}
+@Scripts.Render("~/Scripts/js/common/uimodule/formchangelistener.js?v" + MvcApplication.VersionNumber)
+
+@Html.Partial("ButtonGroup")
+<div id="loantrackingsummary">
+    @Html.Partial("EditSummary")
+</div>
+
+
+
+
+
+

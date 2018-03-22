@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@section HeadScript
+{
+   @RenderSection("HeadScript", required: false)
+}
+
+<div class="mbs-container-wrap 1">
+    <div class="row">
+        <div id="placeHolderLoanHeader" class="row" style="height: 40px">
+        </div>
+        <div class="col-xs-3">
+            <div>
+                <span class="tabs-header txt-bold width-auto padding-left-15">Money</span>
+                <div class="container menu-bootstrap">
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>Summary</span>
+                    </div>
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>Referral</span>
+                    </div>
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>Loan</span>
+                    </div>
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>Compliance</span>
+                    </div>
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>address</span>
+                    </div>
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>Commission</span>
+                    </div>
+                    <div class="row menu-bootstrap-row menu-bootstrap-col">
+                        <span>Dates</span>
+                    </div>
+                    <div class="row menu-element menu-bootstrap-row menu-bootstrap-col-last">
+                        <span>Sharing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-9">
+            <div>@RenderBody()</div>
+        </div>
+    </div>
+</div>

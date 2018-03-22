@@ -1,0 +1,132 @@
+﻿@using BusinessService
+@model BusinessService.DTOs.MoneyDTO
+@{
+    Layout = null;
+} 
+
+<div data-form-change-listener="true" id="loantrackingloansummary-edit" class="ui-corner-bottom" role="tabpanel" aria-hidden="false">
+    <div class="detail-header clearfix">
+        <span>Summary</span>
+        <button-group params="form:'#fbsubmit',handler:$root"></button-group>
+    </div>
+    @using (Ajax.BeginForm("UpdateLoan", "MoneyDTO", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.ReplaceWith,
+        UpdateTargetId = "loantrackingloansummary-edit",
+        OnFailure = "ajaxErrorHandler",
+    }, new {id = "fbsubmit", @class = ""}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.ProductName)
+        @Html.HiddenFor(m => m.ApprovalNumber)
+        @Html.HiddenFor(m => m.Balance)
+        @Html.HiddenFor(m => m.ApplicationDate)
+        @Html.HiddenFor(m => m.ApplicantId)
+        @Html.HiddenFor(m => m.Amount)
+        @Html.HiddenFor(m => m.SubmissionDate)
+
+        <table class="table borderless">
+            <tbody>
+            <tr>
+                <td>
+                    <!--Left side-->
+                    <table class="table borderless">
+                        <tbody>
+                        <tr>
+                            <td class="input-group-horiz">Loan Type</td>
+                            <td>Home Loan</td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Is this the primary loan</td>
+                            <td>
+                                @Html.RadioButtonFor(m => m.IsPrimaryLoan, true, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsPrimaryLoan, "Yes")
+                                @Html.RadioButtonFor(m => m.IsPrimaryLoan, false, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsPrimaryLoan, "No")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Is this a Lo Doc loan</td>
+                            <td>
+                                @Html.RadioButtonFor(m => m.IsLoDocLoan, true, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsLoDocLoan, "Yes")
+                                @Html.RadioButtonFor(m => m.IsLoDocLoan, false, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsLoDocLoan, "No")
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">First home owners</td>
+
+                            <td>
+                                @Html.RadioButtonFor(m => m.IsFirstHomeBuyer, true, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsFirstHomeBuyer, "Yes")
+                                @Html.RadioButtonFor(m => m.IsFirstHomeBuyer, false, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsFirstHomeBuyer, "No")
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Self Employed</td>
+
+                            <td>
+                                @Html.RadioButtonFor(m => m.IsSelfEmployed, true, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsSelfEmployed, "Yes")
+                                @Html.RadioButtonFor(m => m.IsSelfEmployed, false, new {@class = "-toggle"})
+                                @Html.LabelFor(m => m.IsSelfEmployed, "No")
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <!--Right side-->
+                    <table class="table borderless">
+                        <tbody>
+                        <tr>
+                            <td class="input-group-horiz">Current Status</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Product Name</td>
+                            <td>@Model.ProductName</td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Approval Number</td>
+                            <td>@Model.ApprovalNumber</td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Loan Balance, ($)</td>
+                            <td>
+                                @(string.Format(Formats.MoneyFormatNoDollarCommaSeparatedNoDecimal, Model.Balance))
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Last Trail Date</td>
+                            <td>@(@Model.ApplicationDate.HasValue ? string.Format(Formats.DateDisplayFormat, @Model.ApplicationDate.Value) : string.Empty)</td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-horiz">Paid out date</td>
+                            <td>@string.Empty</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    }
+
+
+</div>
+<script>
+    ko.applyBindings(new FormChangeListener(), $('button-group')[0]);
+</script>
+
+

@@ -1,0 +1,460 @@
+
+table.tbl-view.td-vert-mid td {
+	vertical-align: middle;
+}	
+
+table.tbl-view td.middle-and-center {
+	vertical-align: middle;
+	text-align: center;
+}	
+
+table.tbl-view td.txt-wrap-normal {
+	white-space: normal;
+	vertical-align: top;
+}
+
+
+/* orderable columns */
+table.tbl-view > thead > tr > th.orderable:hover,
+table.tbl-view > thead > tr > th.ordered:hover {
+	/*background-color: #4389c8;*/
+	cursor: pointer;
+}
+/*----end ordering----------*/
+
+
+table.tbl-view .tr-group-collapsed td:last-child span {
+	display: inline-block;
+}
+
+table.tbl-view .tr-group-collapsed td:last-child span:first-child,
+table.tbl-view .tr-group-expanded td:last-child span:first-child {
+	font-size: 1.1em;
+	font-weight: bold;
+	letter-spacing: .1em; 
+}
+
+table.tbl-view .tr-group-collapsed td:last-child span:nth-child(2),
+table.tbl-view .tr-group-expanded td:last-child span:nth-child(2) {
+	margin-left: 1em;
+}
+
+/* show expanded/collapsed row indicators */
+table.tbl-view .tr-group-collapsed td:last-child,
+table.tbl-view .tr-group-expanded td:last-child {
+	text-align: left;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+table.tbl-view .tr-group-collapsed td:last-child:before,
+table.tbl-view .tr-group-expanded td:last-child:before {
+	font-family: 'Glyphicons Halflings';
+	font-size: 20px;
+	color: gray;
+	padding-right: 15px;
+	position: relative;
+	top: 5px;
+}
+
+table.tbl-view .tr-group-collapsed td:last-child:hover:before,
+table.tbl-view .tr-group-expanded td:last-child:hover:before {
+	color: #66ccff;
+}
+
+table.tbl-view .tr-group-collapsed td:last-child:before,
+table.tbl-view .tr-group-collapsed td:last-child:hover:before {
+  content: "\e250";	/*triangle-right*/
+}
+
+table.tbl-view .tr-group-expanded td:last-child:before,
+table.tbl-view .tr-group-expanded td:last-child:hover:before {
+  content: "\e252";	/*triangle-bottom*/
+}
+
+/*alternate row colors; the first one is from corporate website - client reviews page - the table*/
+table.tbl-view tbody tr {background-color:#fff;}
+/*table.tbl-view tbody tr:nth-child(odd){background-color:#f6f6f6;}*/ /*bg color from the menu*/
+table.tbl-view tbody tr:not(.sub-heading,fieldset tr):hover {background-color:#f2f2f2;}
+
+table.tbl-view>tbody>tr>td>input[type="checkbox"] {
+	width: 1.1em;
+	height: 1.1em;
+	position: absolute;
+	left: 20%;
+	top: 40%;	
+	transform: translate(-50%, -50%);
+}
+
+/*====================================
+ the dropdown to select records 
+====================================*/
+.select-records {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	width: 45px;
+	background-color: #fff;
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #FCFCFC),
+	color-stop(0.63, #DEDEDE));
+	padding: 2px;
+	vertical-align: bottom;
+	margin: 2px 0 2px 0;
+}
+
+ .select-records > div {
+	text-align: center;
+	width: 18px;
+	height: 18px;
+	float: left;
+}
+
+.select-records > div:first-child > input {
+    height: 100%;
+    width: 100%;
+} 
+
+.select-records > div:first-child {
+	margin-right: 2px;
+}
+
+.select-records > div:nth-child(2) {
+	position: relative;
+}
+
+.select-records > div:nth-child(2):after {
+	font-family: 'Glyphicons Halflings';
+	font-size: 12px;
+	content: "\e252";
+	color: gray;
+}
+
+.select-records > div:last-child > ul {
+	position: absolute;
+    display: block;
+	background-color: #fff;
+	margin: 0;
+	top:95%;
+	left:-99999em;
+	border: 1px solid gray;
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px 0px rgba(50, 50, 50, 0.75);
+	/*display: none;*/
+	opacity: 0;
+	transition: opacity .5s;
+	z-index: 2;
+}
+
+.select-records > div:last-child:hover > ul {
+	left:5%;
+	opacity: 1;
+}
+
+.select-records > div:last-child > ul > li {
+	display: block;
+	color: #212121;
+	background-color: white;
+	cursor: pointer;
+	white-space: nowrap;
+	padding: 5px;
+	text-align: left;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  transition: .3s;
+}
+
+.select-records > div:last-child  > ul > li:hover {
+	color: #fff;
+}
+
+
+/*======= END select-records =========*/
+
+/*------------------------------------------------------------
+		pagination
+--------------------------------------------------------------*/
+
+table.tbl-view > tbody > .tr-total > td:last-child span {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*pagination icon group*/
+table.tbl-view > tbody > .tr-total > td:last-child > span {
+	margin-left: 50px;
+}
+
+/* =========== pagination buttons layout: ============
+1   2 3 4  5
+<<  6 7 8  >>
+======================================================*/
+
+/* all paging buttons */
+.tr-total td:last-child span:nth-child(2) > div {
+	display: inline-block;
+  position: relative;
+	margin-right: .1em;
+  font-style: normal;
+  font-weight: normal;
+	font-size: 1em;
+	/*border-radius: 10%;*/
+	/*border: 1px solid transparent;*/
+	color: gray;
+	padding-left: 3px;
+	padding-right: 3px;
+	text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.tr-total td:last-child > span:nth-child(2) > * {
+  font-family: 'Glyphicons Halflings';
+}
+
+
+.tr-total td:last-child > span:nth-child(2) > div:hover {
+	cursor: pointer;
+	/*border: 1px solid gray;*/
+}
+
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(3) {
+	/*border: 1px solid gray;*/
+	cursor: default;
+}
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(3):hover {
+/*	border: 1px solid gray;
+*/	cursor: pointer;
+}
+
+ /*previous and next page glyph*/
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(2),
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(4) {
+	top: 1px;
+	}
+
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(2):before {content: "\e251";} /*previous page glyph*/
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(4):before {content: "\e250";} /*next page glyph*/
+
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(1):before {content: "\e069";} /*first page glyph*/
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(5):before {content: "\e077";} /*last page glyph*/
+
+
+.tr-total td:last-child > span:nth-child(2) > div:nth-child(3) {
+	width: 50px;
+	text-align: center;
+	padding-bottom: 2px;
+}
+
+.go-to-page-input {
+    position: absolute;
+	  top: 3px;
+	  left: 2px;
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+    display: none;
+   }
+.go-to-page-input-visible {
+    position: absolute;
+	left: 2px;
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+   }
+
+
+/* === the "clear search criteria" button === */
+table.tbl-view thead tr:nth-child(2) th:first-child button {
+  font-weight: normal;
+  line-height: 1;
+  padding: 2px;
+  height: 22px;
+  overflow: hidden;
+  font-size: 14px;
+  z-index: 1;
+}
+
+/*containers to help align some dropdowns*/
+.view-select {
+	display: inline-block;
+	height: 30px;
+	margin-left: 5px;
+}
+
+.action-select {
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+.page-size-select {
+	display: inline-block;
+	width: 70px;
+	height: 30px;
+	margin-right: 0;
+}
+.actions-bar .page-size-select-label {
+	color: #444;
+	margin-top: 16px;
+	margin-left: 50px;
+}
+
+.actions-bar .page-size-select-suffix {
+	margin-top: 16px;
+}
+
+.actions-bar img,
+.actions-bar input[type="image"] {
+	max-height: 30px;
+	width: auto;
+	vertical-align: middle;
+}
+
+table.tbl-view tr > td.td-tags {
+	text-align: center;
+	background-image: url("../images/tag-number-bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 30px;
+	font-size: 14px;
+	color: #fff;
+	vertical-align: middle;
+}
+
+/* tag font color should remain white on hover over anywhere in the row */
+table.tbl-view tr:hover>td.td-tags>a {
+	color: #fff;
+}
+
+.locker {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.1); /*lets make it semi-transparent */
+z-index: 9999; /*because you could set some z-indexes in your code before, so lets make sure that this will be over every elements in html*/
+
+white-space: nowrap;
+text-align: center; 
+}
+
+.spinner        {text-align: center;z-index: 1111;display: none; position: fixed; top:50%; left:50%; width: 100px; margin-left: -50px;}
+.spinner>p      {line-height: 48px; color: #fff;}
+.spinner > div  {
+  width: 18px;
+  height: 18px;
+  background-color: #37ACEC;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.locker img {
+    vertical-align: middle;
+    max-height: 25px;
+    max-width: 160px;
+}
+
+table.tbl-view>tbody>tr>td.numeric-data {
+ 	padding-right: 20px;
+ 	text-align: right;
+ }
+table.tbl-view>tbody>tr>td.numeric-data img {
+	display: inline-block;
+	vertical-align: bottom;
+}
+table.tbl-view>tbody>tr>td.cenetered-data {
+ 	text-align: center;
+ }
+
+/*some images look too large for the grid; adjust*/
+table.tbl-view.img-smaller tbody tr td img,
+div.img-smaller img {
+  max-height: 18px;
+  width: auto;
+  margin-bottom: 2px;
+  vertical-align: bottom;
+}
+
+.go-detail {
+	background-repeat: repeat-x;
+	background-position-y: 90%;
+}
+
+/* Quick Updates Grid
+================================ */
+table.tbl-view.quick-updates-grid td {
+	vertical-align:middle;
+}
+
+tr.clickable:hover td:not(.non-clickable){
+    color: #66ccff;
+    cursor: pointer;
+}
+
+.row-action {
+    display: block;
+    width: 100%;
+}
+
+.row-action:focus {
+    outline: 0;
+}
+
+.row-action-expanded {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+table.tbl-view tbody tr.sub-heading{
+    background-color:  #fff;
+}
+
+table.tbl-view.tbl-ff-expenses-edit tbody tr.row-background-color-even,table.tbl-view.tbl-ff-incomes-edit  tbody tr.row-background-color-even{
+    background-color: #f6f6f6;
+}
+
+table.tbl-view.tbl-ff-expenses-edit tbody tr.row-background-color-odd,table.tbl-view.tbl-ff-incomes-edit  tbody tr.row-background-color-odd{
+    background-color: #fff;
+}
+table.tbl-view.tbl-ff-incomes-edit  tbody tr.row-background-color-odd:hover{
+    background-color: #f2f2f2;
+}
+
+table.tbl-view tbody tr:not(.sub-heading):not(.tr-total):not(.checkbox):hover {
+    background-color: #f2f2f2;
+}
+
+fieldset table.tbl-view tbody tr:not(.sub-heading):not(.tr-total):not(.checkbox):hover {
+    background-color: #fff;
+}
+

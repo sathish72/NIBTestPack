@@ -1,0 +1,648 @@
+/*------------------------------------------------------------
+        Action bar On/Off Switch
+--------------------------------------------------------------*/
+.onoffswitch {
+    position: relative; width: 150px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: none; border-radius: 5px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "SHOW SELECTED";
+    padding-left: 10px;
+    background-color: #e8a713; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    padding-left: 30px;
+    content: "SHOW ALL";
+    padding-right: 10px;
+    background-color: #66ccff;
+    color: #FFFFFF;
+    /*text-align: right;*/
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 2.5px;
+    background: #DADADA;
+    position: absolute; top: 0; bottom: 0;
+    right: 123px;
+    border: 2px solid #999999; border-radius: 6px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+
+/*------------------------------------------------------------
+        advisor show changed fields On/Off Switch 
+--------------------------------------------------------------*/
+.advisor-onoffswitch {
+    position: relative; width: 100px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.advisor-onoffswitch-checkbox {
+    display: none;
+}
+.advisor-onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: none; border-radius: 5px;
+}
+.advisor-onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.advisor-onoffswitch-inner:before, .advisor-onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.advisor-onoffswitch-inner:before {
+    content: " CHANGED ";
+    padding-left: 10px;
+    background-color: #e8a713; color: #fff;
+}
+.advisor-onoffswitch-inner:after {
+    content: " ALL ";
+    padding-right: 20px;        
+    text-align: right;
+    background-color: #66ccff; color: #fff;
+}
+.advisor-onoffswitch-switch {
+    display: block; width: 13px; margin: 6px;
+    background: #ccc;
+    position: absolute; top: 0; bottom: 0;
+    right: 75%;
+    border: 2px solid #999999; border-radius: 5px;
+    transition: all 0.3s ease-in 0s; 
+}
+.advisor-onoffswitch-checkbox:checked + .advisor-onoffswitch-label .advisor-onoffswitch-inner {
+    margin-left: 0;
+}
+.advisor-onoffswitch-checkbox:checked + .advisor-onoffswitch-label .advisor-onoffswitch-switch {
+    right: 0px; 
+}
+
+/*------------------------------------------------------------
+        Email merge fields On/Off Switch 
+--------------------------------------------------------------*/
+.email-merge-onoffswitch {
+    position: relative; width: 100px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.email-merge-onoffswitch-checkbox {
+    display: none;
+}
+.email-merge-onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: none; border-radius: 5px;
+}
+.email-merge-onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.email-merge-onoffswitch-inner:before, .email-merge-onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.email-merge-onoffswitch-inner:before {
+    content: "PREVIEW";
+    padding-left: 10px;
+    background-color: #66ccff; color: #fff;
+}
+.email-merge-onoffswitch-inner:after {
+    content: "FIELDS";
+    padding-right: 10px;
+    background-color: #e8a713; color: #fff;
+    text-align: right;
+}
+.email-merge-onoffswitch-switch {
+    display: block; width: 13px; margin: 6px;
+    background: #ccc;
+    position: absolute; top: 0; bottom: 0;
+    right: 75%;
+    border: 2px solid #999999; border-radius: 5px;
+    transition: all 0.3s ease-in 0s; 
+}
+.email-merge-onoffswitch-checkbox:checked + .email-merge-onoffswitch-label .email-merge-onoffswitch-inner {
+    margin-left: 0;
+}
+.email-merge-onoffswitch-checkbox:checked + .email-merge-onoffswitch-label .email-merge-onoffswitch-switch {
+    right: 0px; 
+}
+
+/*------------------------------------------------------------
+        Email Templates/Drafts On/Off Switch 
+--------------------------------------------------------------*/
+.email-templ-draft-onoffswitch {
+    position: relative; width: 100%;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.email-templ-draft-onoffswitch-checkbox {
+    display: none;
+}
+.email-templ-draft-onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: none; border-radius: 5px;
+}
+.email-templ-draft-onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.email-templ-draft-onoffswitch-inner:before, .email-templ-draft-onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.email-templ-draft-onoffswitch-inner:before {
+    content: "Drafts";
+    padding-left: 10px;
+    background-color: #66ccff; color: #fff;
+}
+.email-templ-draft-onoffswitch-inner:after {
+    content: "Templates";
+    padding-right: 10px;
+    background-color: #e8a713; color: #fff;
+    text-align: right;
+}
+.email-templ-draft-onoffswitch-switch {
+    display: block; width: 13px; margin: 6px;
+    background: #ccc;
+    position: absolute; top: 0; bottom: 0;
+    right: 90%;
+    border: 2px solid #999999; border-radius: 5px;
+    transition: all 0.3s ease-in 0s; 
+}
+.email-templ-draft-onoffswitch-checkbox:checked + .email-templ-draft-onoffswitch-label .email-templ-draft-onoffswitch-inner {
+    margin-left: 0;
+}
+.email-templ-draft-onoffswitch-checkbox:checked + .email-templ-draft-onoffswitch-label .email-templ-draft-onoffswitch-switch {
+    right: 0px; 
+}
+
+
+/*------------------------------------------------------------
+        Status "Active/Inactive" switch 
+--------------------------------------------------------------*/
+.status-onoffswitch {
+    position: relative; width: 108px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.status-onoffswitch-checkbox {
+    display: none;
+}
+.status-onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: none; border-radius: 5px;
+}
+.status-onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.status-onoffswitch-inner:before, .status-onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.status-onoffswitch-inner:before {
+    content: "Active";
+    padding-left: 10px;
+    background-color: #66ccff; color: #fff;
+}
+.status-onoffswitch-inner:after {
+    content: "Inactive";
+    padding-right: 10px;
+     /*#e8a713*/
+    background-color: #ddd; color: #fff;
+    text-align: right;
+}
+.status-onoffswitch-switch {
+    display: block; width: 13px; margin: 6px;
+    background: #ccc;
+    position: absolute; top: 0; bottom: 0;
+    right: 74px;
+    border: 2px solid #999999; border-radius: 5px;
+    transition: all 0.3s ease-in 0s; 
+}
+.status-onoffswitch-checkbox:checked + .status-onoffswitch-label .status-onoffswitch-inner {
+    margin-left: 0;
+}
+.status-onoffswitch-checkbox:checked + .status-onoffswitch-label .status-onoffswitch-switch {
+    right: 0px; 
+}
+
+
+
+*/
+/*------------------------------------------------------------
+        User Vertical Access create/edit onoffswitch used in Security
+--------------------------------------------------------------*/
+.user-sc-onoffswitch {
+    position: relative; width: 108px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.user-sc-onoffswitch-checkbox {
+    display: none;
+}
+.user-sc-onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: none; border-radius: 5px;
+}
+.user-sc-onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.user-sc-onoffswitch-inner:before, .user-sc-onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.user-sc-onoffswitch-inner:before {
+    content: "Full";
+    padding-left: 10px;
+    background-color: #66ccff; color: #fff;
+}
+.user-sc-onoffswitch-inner:after {
+    content: "Selective";
+    padding-right: 10px;
+    background-color: #e8a713; color: #fff;
+    text-align: right;
+}
+.user-sc-onoffswitch-switch {
+    display: block; width: 13px; margin: 6px;
+    background: #ccc;
+    position: absolute; top: 0; bottom: 0;
+    right: 74px;
+    border: 2px solid #999999; border-radius: 5px;
+    transition: all 0.3s ease-in 0s; 
+}
+.user-sc-onoffswitch-checkbox:checked + .user-sc-onoffswitch-label .user-sc-onoffswitch-inner {
+    margin-left: 0;
+}
+.user-sc-onoffswitch-checkbox:checked + .user-sc-onoffswitch-label .user-sc-onoffswitch-switch {
+    right: 0px; 
+}
+
+/*------------------------------------------------------------
+        Create/Edit client - Family tab - Dependants - Gender 
+--------------------------------------------------------------*/
+.client-edit-sw {
+    position: relative; width: 45px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.client-edit-sw-checkbox {
+    display: none;
+}
+.client-edit-sw-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #ccc; border-radius: 27px;
+}
+.client-edit-sw-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.client-edit-sw-inner:before, .client-edit-sw-inner:after {
+    display: block; float: left; width: 50%; height: 17px; padding: 0; line-height: 17px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.client-edit-sw-inner:before {
+    content: "M";
+    padding-left: 10px;
+    background-color: #66CCFF; color: #FFFFFF;
+}
+
+/*added "client-edit-sw" to override "text-align" on td in the other stylesheet*/
+.client-edit-sw-inner:after,
+.tbl-family-dependants tbody tr>td .client-edit-sw .client-edit-sw-inner:after {
+    content: "F";
+    padding-right: 10px;
+    background-color: #E8A713; color: #FFFFFF;
+    text-align: right;
+}
+
+
+
+/*added "client-edit-sw" to override "text-align" on td in the other stylesheet*/
+
+.client-edit-sw-switch {
+    display: block; width: 8px; margin: 4.5px;
+    background: #ddd;
+    position: absolute; top: 0; bottom: 0;
+    right: 24px;
+    border: 2px solid #999999; border-radius: 27px;
+    transition: all 0.3s ease-in 0s; 
+}
+.client-edit-sw-checkbox:checked + .client-edit-sw-label .client-edit-sw-inner {
+    margin-left: 0;
+}
+.client-edit-sw-checkbox:checked + .client-edit-sw-label .client-edit-sw-switch {
+    right: 0px; 
+}
+
+/*------------------------------------------------------------
+        Create/Edit client - BookMark
+--------------------------------------------------------------*/
+.client-edit-bm {
+    position: relative; width: 45px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.client-edit-bm-checkbox {
+    display: none;
+}
+.client-edit-bm-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #ccc; border-radius: 27px;
+}
+.client-edit-bm-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.client-edit-bm-inner:before, .client-edit-bm-inner:after {
+    display: block; float: left; width: 50%; height: 17px; padding: 0; line-height: 17px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.client-edit-bm-inner:before {
+    content: "M";
+    padding-left: 10px;
+    background-color: #66CCFF; color: #FFFFFF;
+}
+
+/*added "client-edit-sw" to override "text-align" on td in the other stylesheet*/
+.client-edit-bm-inner:after,
+.tbl-family-dependants tbody tr>td .client-edit-bm .client-edit-bm-inner:after {
+    content: "S";
+    padding-right: 10px;
+    background-color: #E8A713; color: #FFFFFF;
+    text-align: right;
+}
+
+
+/*added "client-edit-sw" to override "text-align" on td in the other stylesheet*/
+
+.client-edit-bm-switch {
+    display: block; width: 8px; margin: 4.5px;
+    background: #ddd;
+    position: absolute; top: 0; bottom: 0;
+    right: 24px;
+    border: 2px solid #999999; border-radius: 27px;
+    transition: all 0.3s ease-in 0s; 
+}
+.client-edit-bm-checkbox:checked + .client-edit-bm-label .client-edit-bm-inner {
+    margin-left: 0;
+}
+.client-edit-bm-checkbox:checked + .client-edit-bm-label .client-edit-bm-switch {
+    right: 0px; 
+}
+
+/*------------------------------------------------------------
+        Small Active/Inactive switch
+--------------------------------------------------------------*/
+.status-small-onoffswitch {
+    position: relative; width: 82px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.status-small-onoffswitch.assessment {
+    width: 102px;
+}
+
+.status-small-onoffswitch-checkbox {
+    display: none;
+}
+.status-small-onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #CCCCCC; border-radius: 9px;
+}
+.status-small-onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.status-small-onoffswitch-inner:before, .status-small-onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.status-small-onoffswitch-inner:before {
+    content: "Active";
+    padding-left: 10px;
+    background-color: #66CCFF; color: #FFFFFF;
+}
+
+.status-small-onoffswitch-inner.assessment:before {
+    content: "Selected";
+}
+.status-small-onoffswitch-inner:after {
+
+    padding-right: 10px;
+    background-color: #DDDDDD; color: #FFFFFF;
+    text-align: right;
+}
+
+.status-small-onoffswitch-inner.assessment:after {
+        content: "All";
+        text-align:center;
+}
+
+.status-small-onoffswitch-switch {
+    display: block; width: 12px; margin: 2px;
+    background: #eee;
+    position: absolute; top: 0; bottom: 0;
+    right: 65px;
+    border: 2px solid #CCCCCC; border-radius: 9px;
+    transition: all 0.3s ease-in 0s; 
+}
+
+.status-small-onoffswitch-switch.assessment {
+    right:85px;
+}
+.status-small-onoffswitch-checkbox:checked + .status-small-onoffswitch-label .status-small-onoffswitch-inner {
+    margin-left: 0;
+}
+.status-small-onoffswitch-checkbox:checked + .status-small-onoffswitch-label .status-small-onoffswitch-switch {
+    right: 0px; 
+}
+
+/* fix for case when an extra <input> is used */
+.status-small-onoffswitch-checkbox:checked + input + .status-small-onoffswitch-label .status-small-onoffswitch-inner {
+    margin-left: 0;
+}
+.status-small-onoffswitch-checkbox:checked + input + .status-small-onoffswitch-label .status-small-onoffswitch-switch {
+    right: 0px; 
+}
+
+
+
+/*----------------------------------------------------------------------------------
+instead of the captions ("Yes"/"No") hardcoded here, this version grabs them from html data-... attributes
+-----------------------------------------------------------------------------------*/
+.onf-switch {
+    position: relative; width: 150px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onf-switch-checkbox {
+    display: none;
+}
+.onf-switch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #ddd; border-radius: 5px;
+}
+.onf-switch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onf-switch-inner:before, .onf-switch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onf-switch-inner:before {
+    content: attr(data-switch-state1); /* get one state caption */
+    padding-left: 10px;
+    background-color: #66ccff; color: #FFFFFF;
+}
+.onf-switch-inner:after {
+    padding-left: 30px;
+    content: attr(data-switch-state2); /* get other state caption */
+    padding-right: 10px;
+    background-color: #e8a713;
+    color: #FFFFFF;
+    /*text-align: right;*/
+}
+.onf-switch-switch {
+    display: block; width: 18px; margin: 2.5px;
+    background: #DADADA;
+    position: absolute; top: 0; bottom: 0;
+    right: 123px;
+    border: 2px solid #999999; border-radius: 6px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onf-switch-checkbox:checked + .onf-switch-label .onf-switch-inner {
+    margin-left: 0;
+}
+.onf-switch-checkbox:checked + .onf-switch-label .onf-switch-switch {
+    right: 0px; 
+}
+
+
+/*----------------------------------------------------------------------------------
+Live/Draft, etc. - extends to the container width
+-----------------------------------------------------------------------------------*/
+.li-dr-switch {
+    position: relative; width: 100%;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.li-dr-switch-checkbox {
+    display: none;
+}
+.li-dr-switch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 3px solid #ccc; border-radius: 5px;
+}
+.li-dr-switch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.li-dr-switch-inner:before, .li-dr-switch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.li-dr-switch-inner:before {
+    content: attr(data-switch-state1); /* get one state caption */
+    padding-left: 10px;
+    background-color: #e8a713; color: #FFFFFF;
+}
+.li-dr-switch-inner:after {
+    padding-left: 30px;
+    content: attr(data-switch-state2); /* get other state caption */
+    padding-right: 10px;
+    background-color: #66ccff;
+    color: #FFFFFF;
+    /*text-align: right;*/
+}
+.li-dr-switch-switch {
+    display: block; width: 18px; /*margin: 2.5px;*/
+    background: #DADADA;
+    position: absolute;/* top: 0; bottom: 0;*/
+    right: 90%;
+    border: 2px solid #999999; border-radius: 6px;
+    transition: all 0.3s ease-in 0s; 
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.li-dr-switch-checkbox:checked + .li-dr-switch-label .li-dr-switch-inner {
+    margin-left: 0;
+}
+.li-dr-switch-checkbox:checked + .li-dr-switch-label .li-dr-switch-switch {
+    right: 3%; 
+}
+
+
+/*----------------------------------------------------------------------------------
+Yes/No
+-----------------------------------------------------------------------------------*/
+.yes-no-switch {
+    position: relative; width: 61px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.yes-no-switch-checkbox {
+    display: none;
+}
+.yes-no-switch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 8px;
+}
+.yes-no-switch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.yes-no-switch-inner:before, .yes-no-switch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.yes-no-switch-inner:before {
+    content: "Yes";
+    padding-left: 10px;
+    background-color: #E8A713; color: #FFFFFF;
+}
+.yes-no-switch-inner:after {
+    content: "No";
+    padding-right: 10px;
+    background-color: #66CCFF; color: #FFFFFF;
+    text-align: right;
+}
+.yes-no-switch-switch {
+    display: block; width: 13px; margin: 3.5px;
+    background: #DDDDDD;
+    position: absolute; top: 0; bottom: 0;
+    right: 37px;
+    border: 2px solid #999999; border-radius: 8px;
+    transition: all 0.3s ease-in 0s; 
+}
+.yes-no-switch-checkbox:checked + .yes-no-switch-label .yes-no-switch-inner {
+    margin-left: 0;
+}
+.yes-no-switch-checkbox:checked + .yes-no-switch-label .yes-no-switch-switch {
+    right: 0px; 
+}

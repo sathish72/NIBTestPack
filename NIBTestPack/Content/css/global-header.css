@@ -1,0 +1,346 @@
+/* ===================================================*/
+.blockout {
+	position: fixed;
+	top:0;
+	left:0;
+	height: 85px;
+	width: 100%;
+	z-index: 1;
+    background-color:white;
+}
+
+/* ===================================================*/
+header {
+	position: fixed;
+	padding: 3px 5px 0 0;
+	top: 0;
+	right: 0;
+	height: 28px;
+	z-index: 100;
+	width: 80%;
+	background-color: #fff;
+}
+
+header>div {
+	/*display: inline-block;*/
+	float: right;
+	height: 100%;
+	margin-left: 1%;
+}
+
+/* vertically middle align all elements in the header */
+header>div>* {
+	position: relative;
+	display: inline-block;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+header>div>a {
+	display: inline-block;
+	height: 20px; /* icons are all const size */
+	margin-top: -2px;
+}
+
+header>div>a>img {
+	height: 100%;
+}
+
+header>.h-separate {
+	margin-left: 70px;
+}
+
+/*adjust the d/ds*/
+.dd-sc {
+	height: 22px;
+}
+
+/*adjust the text position in the d/d */
+.dd-sc .normal-dropdown {
+	padding:2px 20px 0 10px;
+}
+
+/*adjust the triangle position in the d/d */
+.dd-sc .normal-dropdown div:after {
+	  top: 5px;
+}
+
+/*right align the d/d options in these ones*/
+.dd-sc .normal-dropdown ul,
+.logon .normal-dropdown ul {
+	right: 0;
+}
+
+.logon {
+	margin-top: -1px;
+}
+
+.logon .normal-dropdown {
+	height: 23px;
+	padding: 0;
+	border: none;
+}
+
+/* ===================================================*/
+nav {
+	position: fixed;
+	top: 27px;
+	height: 45px;
+	width: 100%;
+	padding-left: 10px;
+	background: #fff;
+	z-index: 10;
+	color: inherit;
+	display: flex;
+}
+
+.sl-logo {
+	position: absolute;
+	bottom: 0;
+	left: .5%;
+	width: 18%;
+	max-width: 270px;
+	/*min-width: 200px;*/
+}
+
+.sl-logo img {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	bottom: 0;
+	left: 0;
+}
+
+.search-glob {
+	position: absolute;
+ 	right:50px;
+ 	top: 50%;
+	transform: translateY(-50%);
+	border: none;
+	cursor: pointer;
+	background-color: inherit;
+	width: 15%;
+	max-width: 250px;
+}
+.search-glob input {
+	background-color: inherit;
+	width: 100%;
+	border: none;
+	border-bottom:  1px solid #999;
+	color: #666;
+	outline: none;
+	transition: .4s;
+}
+.search-glob img {
+  position: absolute;
+	bottom: 0;
+  right: -20px;
+  width: 16px;
+  height: auto;
+}
+.global-status {
+	position: absolute;
+ 	right:50px;
+ 	top: 50%;
+	transform: translateY(-50%);
+	border: 1px solid #aaa;
+	border-radius: 8px;
+	background-color: inherit;
+	line-height: 30px;
+	max-width: 30%;
+	padding: 0 5px;
+}
+.global-status span {
+	vertical-align: middle;
+}
+
+/* ===================================================*/
+.main-menu {
+	position: relative;
+	height: 100%;
+	width: 80%;
+	margin: 0;
+	margin-left: auto;
+	background: #e2e2e2;
+	border-radius: 8px;
+	display: flex;
+	white-space: nowrap; 
+}
+
+.main-menu>li {
+	position: relative;
+	height: 100%;
+	margin: 0;
+}
+
+.main-menu>li:first-child {
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+.main-menu>li:hover {
+	background-color: #66ccff;
+	/*color: #fff; */
+}
+
+.main-menu>li>a {
+	display: block;
+	height: 100%;
+	padding: 1em 1em 0 1em;
+	color: inherit;
+}
+
+
+/* === menu item separators START === */
+.main-menu>li:after {
+	content:"";
+	position: absolute;
+	left: -1px;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: .5;
+	width: 1px;
+	height: 1em;
+	background: url("../images/1px-gray.png");
+	background-size: cover;
+}
+
+/*remove left separator on first li*/
+/*hide separators on both sides of any li on hover*/
+.main-menu>li:first-child:after,
+.main-menu>li:hover:after,
+.main-menu>li:hover+li:after {
+	background: none;
+}
+/* === separators END === */
+
+
+.drop-down {
+	position: absolute;
+	border: 1px solid #ccc;
+	padding: .5em 0 1em 0;
+	background-color: #fff;
+	border-radius: 4px;
+	display: none;
+}
+
+.main-menu>li:hover>.drop-down {
+	display: inline-block;
+}
+
+/*make the additional <li>s line up horizontaly*/
+.drop-down>li {
+	display: table-cell;
+	vertical-align: top;
+	padding: 0 1em 0 1em;
+	height: 100%;
+}
+
+
+/*make the vert separators for <li>s that are under same menu item */
+.drop-down>li:not(:first-child) {
+	border-left: 1px solid #ddd;
+}
+
+
+/*100% is for vertical layout (narrow screens)*/
+.drop-down>li>ul {
+	display: inline-block;
+	width: 100%;
+} 
+
+/* grey bg*/
+.drop-down>li>ul>li {
+	display: block;
+	background-color: #eee;
+    color: black;
+
+}
+
+.drop-down>li>ul>li:not(:last-child) {
+	border-bottom: 1px dotted #ddd;
+}
+
+.category-menu-items.ui-menu .ui-menu-item{
+    margin-bottom:5px;
+}
+.drop-down>li>ul>li>a:hover,.category-menu-items.ui-menu .ui-menu-item:hover {
+	background-color: #66ccff;
+	color: #fff;
+}
+
+.drop-down>li>ul>li>a {
+	display: block;
+	height: 100%;
+	background-color: inherit;
+	padding: .7em .5em .7em .5em;
+	white-space: nowrap;
+}
+
+.drop-down>li>.menu-header {
+	padding: 0 0 .5em 0;
+	background-color: #fff;
+	font-weight: 600;
+	color: #888;
+	letter-spacing: 1px;
+}
+
+
+
+
+
+/*------------------------------------------------------------
+		the bar with action buttons
+--------------------------------------------------------------*/
+.actions-wrapper {
+    position: fixed;
+    top: 70px;
+    padding-top: 5px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 8px;
+    z-index: 2;
+    box-shadow: 2px 1px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+.actions-bar {
+	position: relative;
+	display: inline-block;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0;
+    z-index: 1;
+	height: 100%;
+}
+
+.actions-bar > * {
+	display: inline-block;
+	margin: 5px;
+}
+
+/* vert. align the dropdowns; JQuery UI totally re-builds them so initially they are out */
+.actions-bar > span.fix-offset-top {
+	position: relative;
+	margin: 0;
+	top: -8px;
+}
+
+/*vertical menu layout*/
+/*==================================*/
+@media screen and (max-width: 1300px) {
+	.drop-down>li {
+	display: block;								
+	border: none;
+	margin-top: 1em;
+	}
+
+	/*remove global search, save space for the menu*/
+	.search-glob {
+		display: none;
+	}
+}
+
